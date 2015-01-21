@@ -3,7 +3,9 @@ namespace Teto\Functools;
 
 final class FunctoolsTest extends \PHPUnit_Framework_TestCase
 {
-    /** @dataProvider dataProviderFor_array_map */
+    /**
+     * @dataProvider dataProviderFor_array_map
+     */
     public function test_with_array_map($expected, $callable, $default_args, $pos, $input)
     {
         $patial_applicated = new PartialCallable($callable, $default_args, $pos);

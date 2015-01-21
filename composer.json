@@ -17,12 +17,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Teto\\Functools\\": "src/"
+            "Teto\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Teto\\Functools\\": "tests/"
+            "Teto\\": "tests/"
         }
     }
 }
