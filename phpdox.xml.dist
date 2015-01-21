@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<phpdox xmlns="http://phpdox.net/config" silent="false">
+    <bootstrap />
+
+    <!-- A phpDox project to process, you can have multiple projects in one config file -->
+    <project name="functools" source="${basedir}/src" workdir="${basedir}/build/phpdox/xml">
+        <collector publiconly="false" backend="parser">
+            <include mask="*.php" />
+            <exclude mask="" />
+
+            <inheritance resolve="true">
+            </inheritance>
+
+        </collector>
+
+        <generator output="${basedir}/build/phpdox">
+            <enrich base="${basedir}/build">
+                <source type="build" />
+                <source type="phploc" />
+                <source type="git">
+                    <git binary="/usr/bin/git" />
+                    <history enabled="true" limit="15" cache="${phpDox.project.workdir}/gitlog.xml" />
+                </source>
+                <!--<source type="checkstyle">-->
+                    <!-- @type - the handler for the enrichment -->
+                    <!--         known types by default are: checkstyle, pmd, clover, phpunit -->
+
+                    <!-- every enrichment source can have additional configuration nodes, most probably need a logfile -->
+                    <!-- <file name="logs/checkstyle.xml" /> -->
+                <!--</source> -->
+
+                <source type="pmd">
+                    <file name="phpmd.xml" />
+                </source>
+            </enrich>
+
+            <build engine="html" enabled="true" output="html">
+                <template dir="${phpDox.home}/templates/html" />
+                <file extension="xhtml" />
+            </build>
+        </generator>
+    </project>
+</phpdox>
