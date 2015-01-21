@@ -1,7 +1,7 @@
 <?php
 namespace Teto\Functools;
 
-final class FunctoolsTest extends \PHPUnit_Framework_TestCase
+final class PartialCallableTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @dataProvider dataProviderFor_array_map
