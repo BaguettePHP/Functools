@@ -16,5 +16,9 @@ final class ConsTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue( isset($triple[1]));
         $this->assertTrue( isset($triple[2]));
         $this->assertFalse(isset($triple[3]));
+
+        $this->assertSame(3, count($triple));
+        $this->assertSame(2, count($triple->cdr));
+        $this->assertSame(1, count($triple->cdr->cdr));
     }
 }

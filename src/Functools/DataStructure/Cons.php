@@ -5,12 +5,12 @@ namespace Teto\Functools\DataStructure;
  * Cons cell
  *
  * @package    Teto
- * @subpackage Functools
+ * @subpackage Functools\DataStructure
  * @author     USAMI Kenta <tadsan@zonu.me>
  * @copyright  2015 USAMI Kenta
  * @license    http://www.apache.org/licenses/LICENSE-2.0
  */
-final class Cons implements \ArrayAccess
+final class Cons implements \ArrayAccess, \Countable
 {
     /** @var mixed */
     private $car;
@@ -29,6 +29,16 @@ final class Cons implements \ArrayAccess
     }
 
     public function __get($offset) { return $this->$offset; }
+
+    /** @return boolean */
+    public function count($n = 0)
+    {
+        if ($this->car === null) { return $n; }
+        if ($this->cdr === null) { return $n + 1; }
+        if (!$this->cdr instanceof self) { return $n + 2; }
+
+        return $this->cdr->count($n + 1);
+    }
 
     /**
      * @param int $offset
