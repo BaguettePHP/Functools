@@ -19,8 +19,12 @@ composer require zonuexe/functools
 Features
 --------
 
-* `Functools::partial()`
+* `Functools::partial(callable $callback, array $arguments, int $pos)`
   * Partial application for [callable](http://php.net/manual/language.types.callable.php) (`arary_map` friendly)
+* `Functools::arity(callable $callback)`
+  * Analyze [arity](http://en.wikipedia.org/wiki/Arity)(number of arguments) of `$callback`.
+* `Functools::curry(callable $callback)`
+  * [Currying](http://en.wikipedia.org/wiki/Currying) `$callback` object.
 
 Copyright
 ---------
