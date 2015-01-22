@@ -1,6 +1,7 @@
 <?php
 namespace Teto;
 use Teto\Functools as f;
+use Teto\Functools\DataStructure\Cons;
 
 final class FunctoolsTest extends \PHPUnit_Framework_TestCase
 {
@@ -48,5 +49,11 @@ final class FunctoolsTest extends \PHPUnit_Framework_TestCase
 
         $this->assertContainsOnly('string', $actual);
         $this->assertSame($expected, $actual);
+    }
+
+    public function test_tuple()
+    {
+        $expected = new Cons("foo", new Cons("bar", new Cons("buz", null)));
+        $actual = f::tuple("foo", "bar", "buz");
     }
 }

@@ -72,4 +72,19 @@ final class Functools
             return $y($x($arg));
         };
     }
+
+    /**
+     * @param  mixed $item,...
+     * @return Functools\DataStructure\Cons
+     */
+    public static function tuple()
+    {
+        $items = func_get_args();
+        $car = array_shift($items);
+
+        return new Functools\DataStructure\Cons(
+            $car,
+            $items ? call_user_func_array('self::tuple', $items) : null
+        );
+    }
 }
