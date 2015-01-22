@@ -312,6 +312,27 @@ final class Operator
      */
     public static function construct_eval($a) { return eval($a); }
 
+    public static function arity()
+    {
+        return call_user_func_array('\Teto\Functools::arity', func_get_args());
+    }
+
+    public static function curry()
+    {
+        return call_user_func_array('\Teto\Functools::curry', func_get_args());
+    }
+
+    public static function compose()
+    {
+        return call_user_func_array('\Teto\Functools::compose', func_get_args());
+    }
+
+    public static function tuple()
+    {
+        return call_user_func_array('\Teto\Functools::tuple', func_get_args());
+    }
+
+
     /** S combinator */
     public static function s($f, $g, $x) { return call_user_func($f($x), $g($x)); }
 
@@ -410,6 +431,10 @@ final class Operator
             'include' => 'construct_include',
             'require_once' => 'construct_require_once',
             'include_once' => 'construct_include_once',
+            'arity' => 'arity',
+            'compose' => 'compose',
+            'curry' => 'curry',
+            'tuple' => 'tuple',
             's' => 's',
             'k' => 'k',
             'i' => 'i',

@@ -16,11 +16,8 @@ final class Functools
     /**
      * @return PartialCallable
      */
-    public static function partial(
-        callable $callback,
-        array $arguments = [],
-        $pos = null
-    ) {
+    public static function partial(callable $callback, array $arguments = [], $pos = null)
+    {
         return new Functools\PartialCallable($callback, $arguments, $pos);
     }
 
@@ -56,11 +53,11 @@ final class Functools
         return new Functools\CurriedCallable($callback, self::arity($callback), []);
     }
 
-    public static function op($symbol, array $arguments = [])
+    public static function op($symbol, array $arguments = [], $pos = null)
     {
         $op = Functools\Operator::op($symbol);
 
-        return $arguments ? self::partial($op, $arguments) : $op;
+        return $arguments ? self::partial($op, $arguments, $pos) : $op;
     }
 
     /**
