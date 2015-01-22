@@ -31,6 +31,16 @@ final class PartialCallable
         return call_user_func_array($this->callable, $this->arguments(func_get_args()));
     }
 
+    /**
+     * Make partially applied function
+     *
+     * @note Returns new instance
+     */
+    public function partial(array $arguments)
+    {
+        return new PartialCallable($this->callable, $this->arguments + $arguments, $this->pos);
+    }
+
     private function arguments(array $additional_arguments)
     {
         $arguments = $this->arguments;

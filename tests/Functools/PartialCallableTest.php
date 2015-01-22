@@ -3,6 +3,17 @@ namespace Teto\Functools;
 
 final class PartialCallableTest extends \PHPUnit_Framework_TestCase
 {
+    public function test_partial()
+    {
+        $func = function ($a, $b, $c) { return $a.$b.$c; };
+        $p1 = new PartialCallable($func, [2 => "c"], 1);
+
+        $p2 = $p1->partial([0 => "A"]);
+        $this->assertInstanceOf('Teto\Functools\PartialCallable', $p2);
+
+        $this->assertEquals("ABc", $p2("B"));
+    }
+
     /**
      * @dataProvider dataProviderFor_array_map
      */
