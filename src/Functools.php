@@ -55,4 +55,21 @@ final class Functools
     {
         return new Functools\CurriedCallable($callback, self::arity($callback), []);
     }
+
+    public static function op($symbol, array $arguments = [])
+    {
+        $op = Functools\Operator::op($symbol);
+
+        return $arguments ? self::partial($op, $arguments) : $op;
+    }
+
+    /**
+     *
+     */
+    public static function compose($x, $y)
+    {
+        return function ($arg) use ($x, $y) {
+            return $y($x($arg));
+        };
+    }
 }

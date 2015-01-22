@@ -1,5 +1,6 @@
 <?php
 namespace Teto;
+use Teto\Functools as f;
 
 final class FunctoolsTest extends \PHPUnit_Framework_TestCase
 {
@@ -35,5 +36,17 @@ final class FunctoolsTest extends \PHPUnit_Framework_TestCase
         $actual_abc = $actual_ab("C");
         $this->assertSame("AbC", $actual_abc);
         $this->assertNotInstanceOf('Teto\Functools\CurriedCallable', $actual_abc);
+    }
+
+    public function test_compose()
+    {
+        $expected = ["2", "4", "6", "8", "10"];
+
+        $x2 = f::op('*', [2]);
+        $x2_str = f::compose($x2, "strval");
+        $actual = array_map($x2_str, range(1, 5));
+
+        $this->assertContainsOnly('string', $actual);
+        $this->assertSame($expected, $actual);
     }
 }
