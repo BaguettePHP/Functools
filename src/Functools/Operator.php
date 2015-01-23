@@ -358,6 +358,18 @@ final class Operator
         return $a[$idx];
     }
 
+    /**
+     * @param  mixed $idx
+     * @param  mixed $a
+     * @param  mixed $v
+     * @return mixed
+     */
+    public static function index_assign($idx, $a, $v)
+    {
+        $a[$idx] = $v;
+        return $v;
+    }
+
     public static function arity()
     {
         return call_user_func_array('\Teto\Functools::arity', func_get_args());
@@ -443,6 +455,8 @@ final class Operator
             '?:'  => 'elvis',
             '.'   => 'concatenation',
             '@[]' => 'index_access',
+            '@[]=' => 'index_assign',
+            '[]=' => 'index_assign',
             'if'  => 'conditional_lazy',
             '[,]' => 'make_array_double',
             '[,,]' => 'make_array_triple',
@@ -492,6 +506,7 @@ final class Operator
             'require_once' => 'construct_require_once',
             'include_once' => 'construct_include_once',
             'index_access' => 'index_access',
+            'index_assign' => 'index_assign',
             'arity' => 'arity',
             'compose' => 'compose',
             'curry' => 'curry',
