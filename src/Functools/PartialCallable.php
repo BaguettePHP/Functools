@@ -13,32 +13,43 @@ namespace Teto\Functools;
 final class PartialCallable
 {
     /** @var callable */
-    private $callable;
+    private $callback;
     /** @var mixed[] */
     private $arguments;
     /** @var int|null */
     private $pos;
 
-    public function __construct(callable $callable, array $arguments = [], $pos = null)
+    /**
+     * @param callable $callback
+     * @param mixed[]  $arguments
+     * @param int      null
+     */
+    public function __construct(callable $callback, array $arguments = [], $pos = null)
     {
-        $this->callable  = $callable;
+        $this->callback  = $callback;
         $this->arguments = $arguments;
         $this->pos       = $pos;
     }
     
+    /**
+     * @param  mixed $arg,...
+     * @return mixed
+     */
     public function __invoke()
     {
-        return call_user_func_array($this->callable, $this->arguments(func_get_args()));
+        return call_user_func_array($this->callback, $this->arguments(func_get_args()));
     }
 
     /**
      * Make partially applied function
      *
-     * @note Returns new instance
+     * @param  mixed[] $arguments
+     * @param  int     null
+     * @return PartialCallable Returns new instance
      */
-    public function partial(array $arguments)
+    public function partial(array $arguments, $pos = null)
     {
-        return new PartialCallable($this->callable, $this->arguments + $arguments, $this->pos);
+        return new PartialCallable($this->callback, $this->arguments + $arguments, ($pos !== null) ? $pos : $this->pos);
     }
 
     private function arguments(array $additional_arguments)
