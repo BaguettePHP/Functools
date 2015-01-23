@@ -26,9 +26,13 @@ Features
 * `Functools::curry(callable $callback)`
   * [Currying](http://en.wikipedia.org/wiki/Currying) `$callback` object.
 * `Functools::op(string $symbol, [array $arguments, int $pos])`
-  * Get callable object and partial application
+  * Get callable object (and partial application.)
+* `Functools::collback(callable $callback,...)`
+  * [Function composition](http://en.wikipedia.org/wiki/Function_composition_%28computer_science%29).
 * `Functools::tuple(mixed $item,...)`
-  * Make n-[Tuple](http://en.wikipedia.org/wiki/Tuple)
+  * Make n-[Tuple](http://en.wikipedia.org/wiki/Tuple).
+* `Functools::fix(callable $callback)`
+  * [Anonymous recursion](http://en.wikipedia.org/wiki/Anonymous_recursion) ([fixed-point combinator](http://en.wikipedia.org/wiki/Fixed-point_combinator))
 
 Usage
 -----
@@ -37,6 +41,27 @@ Usage
 
 ```php
 use Teto\Functools as f;
+```
+
+### f::partial()
+
+```php
+$colon = f::partial("implode", [", "]);
+$colon(range(1, 10));
+// "1, 2, 3, 4, 5, 6, 7, 8, 9, 10"
+
+$join_10 = f::partial("implode", [1 => range(1, 10)], 0);
+$join_10("@");
+// "1@2@3@4@5@6@7@8@9@10"
+$join_10("\\");
+=> "1\\2\\3\\4\\5\\6\\7\\8\\9\\10"
+
+$sleep3 = f::partial("sleep", [3]);
+$sleep3();
+$sleep3("foo"); // Error!
+
+$sleep3 = f::partial("sleep", [3], -1);
+$sleep3("foo"); // OK!
 ```
 
 ### f::op()
@@ -72,6 +97,18 @@ $tetop->pget("name");     // "Teto Kasane"
 $tetop->pget("age");      // 31
 $tetop->pget("birthday"); // "2008-04-01"
 $tetop->pget("item");     // "Baguette"
+```
+
+### f::fix()
+
+```php
+$fib = f::fix(function ($fib) {
+    return function ($x) use ($fib) {
+        return ($x < 2) ? 1 : $fib($x - 1) + $fib($x -2);
+    };
+});
+
+$fib(6); // 13
 ```
 
 Copyright
