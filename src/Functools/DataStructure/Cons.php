@@ -83,4 +83,30 @@ final class Cons implements \ArrayAccess, \Countable
 
         return $this->cdr->pget($key, $default_val);
     }
+
+    /**
+     * @param  mixed $key
+     * @param  mixed $default_val
+     * @return mixed
+     */
+    public function assoc($key, $default_val = null)
+    {
+        if ($this->car->car === $key) { return $this->car; }
+        if ($this->cdr === null) { return $default_val; }
+
+        return $this->cdr->assoc($key, $default_val);
+    }
+
+    /**
+     * @param  mixed $key
+     * @param  mixed $default_val
+     * @return mixed
+     */
+    public function rassoc($key, $default_val = null)
+    {
+        if ($this->car->cdr === $key) { return $this->car; }
+        if ($this->cdr === null) { return $default_val; }
+
+        return $this->cdr->rassoc($key, $default_val);
+    }
 }

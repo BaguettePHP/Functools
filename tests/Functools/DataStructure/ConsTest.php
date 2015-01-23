@@ -31,4 +31,19 @@ final class ConsTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(31,            $plist->pget(":age",    $undefined));
         $this->assertSame($undefined,    $plist->pget(":author", $undefined));
     }
+
+    public function test_assoc()
+    {
+        $name = new Cons(":name", "Teto Kasane");
+        $age  = new Cons(":age", 31);
+        $alist = new Cons($name, new Cons($age, null));
+        $undefined = "'undefined";
+
+        $this->assertSame($name,      $alist->assoc(":name",   $undefined));
+        $this->assertSame($age,       $alist->assoc(":age",    $undefined));
+        $this->assertSame($undefined, $alist->assoc(":author", $undefined));
+        $this->assertSame($name,      $alist->rassoc("Teto Kasane",   $undefined));
+        $this->assertSame($age,       $alist->rassoc(31,    $undefined));
+        $this->assertSame($undefined, $alist->rassoc("Miku Hatsune", $undefined));
+    }
 }
