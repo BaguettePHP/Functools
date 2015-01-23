@@ -94,4 +94,27 @@ final class Functools
             $items ? call_user_func_array('self::tuple', $items) : null
         );
     }
+
+    /**
+     * Fixed point combinator (Z combinator)
+     */
+    public static function fix(callable $f)
+    {
+        return call_user_func(
+            function (callable $x) use ($f) {
+                return $f(
+                    function () use ($f, $x) {
+                        return call_user_func_array($x($x), func_get_args());
+                    }
+                );
+            },
+            function (callable $x) use ($f) {
+                return $f(
+                    function () use ($f, $x) {
+                        return call_user_func_array($x($x), func_get_args());
+                    }
+                );
+            }
+        );
+    }
 }

@@ -56,4 +56,15 @@ final class FunctoolsTest extends \PHPUnit_Framework_TestCase
         $expected = new Cons("foo", new Cons("bar", new Cons("buz", null)));
         $actual = f::tuple("foo", "bar", "buz");
     }
+
+    public function test_fix()
+    {
+        $actual = Functools::fix(function ($rec) {
+            return function ($n) use ($rec) {
+                return ($n == 0) ? 1 : $n * $rec($n - 1);
+            };
+        });
+
+        $this->assertEquals(120, $actual(5));
+    }
 }

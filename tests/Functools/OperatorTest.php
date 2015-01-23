@@ -38,15 +38,4 @@ final class OperatorTest extends \PHPUnit_Framework_TestCase
 
         $this->assertSame("teto", $i("teto"));
     }
-
-    public function test_fix()
-    {
-        $actual = Operator::fix(function ($rec) {
-            return function ($n) use ($rec) {
-                return ($n == 0) ? 1 : $n * $rec($n - 1);
-            };
-        });
-
-        $this->assertEquals(120, $actual(5));
-    }
 }

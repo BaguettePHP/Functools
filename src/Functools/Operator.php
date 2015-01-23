@@ -345,6 +345,11 @@ final class Operator
         return call_user_func_array('\Teto\Functools::tuple', func_get_args());
     }
 
+    public static function fix($f)
+    {
+        return call_user_func_array('\Teto\Functools::fix', func_get_args());
+    }
+
 
     /** S combinator */
     public static function s($f, $g, $x) { return call_user_func($f($x), $g($x)); }
@@ -360,27 +365,6 @@ final class Operator
         $k = f::curry([$_, 'k']);
 
         return $s($k, $k, $a);
-    }
-
-    /** Z combinator */
-    public static function fix($f)
-    {
-        return call_user_func(
-            function ($x) use ($f) {
-                return $f(
-                    function () use ($f, $x) {
-                        return call_user_func_array($x($x), func_get_args());
-                    }
-                );
-            },
-            function ($x) use ($f) {
-                return $f(
-                    function () use ($f, $x) {
-                        return call_user_func_array($x($x), func_get_args());
-                    }
-                );
-            }
-        );
     }
 
     private static function initOperators()
