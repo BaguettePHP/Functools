@@ -444,6 +444,8 @@ final class Operator
             '.'   => 'concatenation',
             '@[]' => 'index_access',
             'if'  => 'conditional_lazy',
+            '[,]' => 'make_array_double',
+            '[,,]' => 'make_array_triple',
 
             'id' => 'id',
             'equal' => 'equal',
@@ -476,6 +478,9 @@ final class Operator
             'elvis' => 'elvis',
             'concatenation' => 'concatenation',
             'instanceof' => '_instanceof',
+            'method' => 'method',
+            'make_array_double' => 'make_array_double',
+            'make_array_triple' => 'make_array_triple',
             'echo'  => 'construct_echo',
             'print' => 'construct_print',
             'eval'  => 'construct_eval',
