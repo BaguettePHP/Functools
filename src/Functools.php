@@ -67,16 +67,16 @@ final class Functools
     public static function compose()
     {
         $fs = func_get_args();
-        $x = array_shift($fs);
+        $f  = array_shift($fs);
 
-        if (empty($x) || empty($fs)) {
+        if (empty($f) || empty($fs)) {
             throw new \LogicException();
         }
 
-        $y = (count($fs) === 1) ? $fs : call_user_func_array('self::compose', $fs);
+        $g = (count($fs) === 1) ? array_shift($fs) : call_user_func_array('self::compose', $fs);
 
-        return function ($a) use ($x, $y) {
-            return $y($x($a));
+        return function ($a) use ($f, $g) {
+            return $g($f($a));
         };
     }
 
