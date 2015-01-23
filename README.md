@@ -41,7 +41,7 @@ use Teto\Functools as f;
 
 ### f::op()
 
-```
+```php
 $add = f::op("+");
 $add(2, 3); // (2 + 3) === 5
 
@@ -54,7 +54,7 @@ $half(10);  // (10 / 2) === 5
 
 ### f::tuple()
 
-```
+```php
 $teto  = f::tuple("Teto Kasane",  31, "2008-04-01", "Baguette");
 $ritsu = f::tuple("Ritsu Namine", 6,  "2009-10-02", "Napa cabbage");
 
