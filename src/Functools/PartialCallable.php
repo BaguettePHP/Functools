@@ -44,7 +44,10 @@ final class PartialCallable
     private function arguments(array $additional_arguments)
     {
         $arguments = $this->arguments;
-        if ($this->pos !== null) {
+
+        if ($this->pos < 0) {
+            // through
+        }elseif ($this->pos !== null) {
             $arguments[$this->pos] = array_shift($additional_arguments);
             ksort($arguments);
         } else {

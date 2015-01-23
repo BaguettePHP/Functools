@@ -15,6 +15,37 @@ final class PartialCallableTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @dataProvider dataProviderFor_partial_negative
+     */
+    public function test_partial_negative($expected, $input)
+    {
+        $func = function ($a = "X", $b = "Y", $c = "Z") {
+            return [$a.$b.$c, func_get_args()];
+        };
+
+        $p = new PartialCallable($func, $input, -1);
+
+        list($actual, $received_args) = $p("c");
+
+        $this->assertEquals($expected, $actual);
+        $this->assertEquals($input, $received_args);
+    }
+
+    public function dataProviderFor_partial_negative()
+    {
+        return [
+            [
+                'expected' => "AbC",
+                'input'    => ["A", "b", "C"],
+            ],
+            [
+                'expected' => "AbZ",
+                'input'    => ["A", "b"],
+            ],
+        ];
+    }
+
+    /**
      * @dataProvider dataProviderFor_array_map
      */
     public function test_with_array_map($expected, $callable, $default_args, $pos, $input)
