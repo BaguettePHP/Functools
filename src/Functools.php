@@ -74,7 +74,6 @@ final class Functools
         }
 
         $y = (count($fs) === 1) ? $fs : call_user_func_array('self::compose', $fs);
-        var_dump($y);
 
         return function ($a) use ($x, $y) {
             return $y($x($a));
