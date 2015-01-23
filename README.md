@@ -25,6 +25,54 @@ Features
   * Analyze [arity](http://en.wikipedia.org/wiki/Arity)(number of arguments) of `$callback`.
 * `Functools::curry(callable $callback)`
   * [Currying](http://en.wikipedia.org/wiki/Currying) `$callback` object.
+* `Functools::op(string $symbol, [array $arguments, int $pos])`
+  * Get callable object and partial application
+* `Functools::tuple(mixed $item,...)`
+  * Make n-[Tuple](http://en.wikipedia.org/wiki/Tuple)
+
+Usage
+-----
+
+### Short syntax
+
+```php
+use Teto\Functools as f;
+```
+
+### f::op()
+
+```
+$add = f::op("+");
+$add(2, 3); // (2 + 3) === 5
+
+$add_1 = f::op("+", [1]);
+$add_1(4);  // (1 + 4) === 5
+
+$half = f::op("/", [1 => 2], 0);
+$half(10);  // (10 / 2) === 5
+```
+
+### f::tuple()
+
+```
+$teto  = f::tuple("Teto Kasane",  31, "2008-04-01", "Baguette");
+$ritsu = f::tuple("Ritsu Namine", 6,  "2009-10-02", "Napa cabbage");
+
+// index access
+$teto[0]; // "Teto Kasane"
+$teto[1]; // 31
+$teto[2]; // "2008-04-01"
+$teto[3]; // "Baguette"
+
+// property access
+
+$tetop  = f::tuple("name", "Teto Kasane",  "age", 31, "birthday", "2008-04-01", "item", "Baguette");
+$ritsup = f::tuple("name", "Ritsu Namine", "age",  6, "birthday", "2009-10-02", "item", "Napa cabbage");
+$tetop->pget("name");     // "Teto Kasane"
+$tetop->pget("age");      // 31
+$tetop->pget("birthday"); // "2008-04-01"
+$tetop->pget("item");     // "Baguette"
+```
 
 Copyright
 ---------
