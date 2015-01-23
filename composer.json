@@ -13,6 +13,7 @@
         ,"theseer/phpdox":  "~0.7.0"
         ,"phploc/phploc":   "~2.0.6"
         ,"phpmd/phpmd":     "@stable"
+        ,"emonkak/underbar.php": "dev-master"
     },
     "autoload": {
         "psr-4": {

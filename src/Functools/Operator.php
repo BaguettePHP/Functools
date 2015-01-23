@@ -277,6 +277,39 @@ final class Operator
      */
     public static function _instanceof($a, $b) { return $a instanceof $b; }
 
+    // ===== Array Helper =====
+
+    /**
+     * @param  mixed  $receiver
+     * @param  string $method
+     * @return array
+     */
+    public static function method($receiver, $method)
+    {
+        return [$a, $b];
+    }
+
+    /**
+     * @param  mixed $a
+     * @param  mixed $b
+     * @return array
+     */
+    public static function make_array_double($a, $b)
+    {
+        return [$a, $b];
+    }
+
+    /**
+     * @param  mixed $a
+     * @param  mixed $b
+     * @param  mixed $c
+     * @return array
+     */
+    public static function make_array_triple($a, $b, $c)
+    {
+        return [$a, $b, $c];
+    }
+
     // ===== Language Construct =====
 
     /**
