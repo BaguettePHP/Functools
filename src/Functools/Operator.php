@@ -353,12 +353,34 @@ final class Operator
     public static function k($x, $y) { return $x; }
 
     /** I combinator */
-    public static function i($a) {
+    public static function i($a)
+    {
         $_ = self::getInstance();
         $s = [$_, 's'];
         $k = f::curry([$_, 'k']);
 
         return $s($k, $k, $a);
+    }
+
+    /** Z combinator */
+    public static function fix($f)
+    {
+        return call_user_func(
+            function ($x) use ($f) {
+                return $f(
+                    function () use ($f, $x) {
+                        return call_user_func_array($x($x), func_get_args());
+                    }
+                );
+            },
+            function ($x) use ($f) {
+                return $f(
+                    function () use ($f, $x) {
+                        return call_user_func_array($x($x), func_get_args());
+                    }
+                );
+            }
+        );
     }
 
     private static function initOperators()
@@ -456,6 +478,8 @@ final class Operator
             'k' => 'k',
             'i' => 'i',
             'skk' => 'i',
+            'fix' => 'fix',
+            'z' => 'fix',
         ];
 
         return self::$operators;
