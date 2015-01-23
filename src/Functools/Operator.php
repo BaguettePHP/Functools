@@ -370,6 +370,19 @@ final class Operator
         return $v;
     }
 
+    /**
+     * @param  mixed $acc
+     * @param  array $tup
+     * @return array
+     */
+    public static function tup_to_kv($acc, array $tup)
+    {
+        $key = array_shift($tup);
+        $acc[$key] = (count($tup) !== 1) ? $tup : array_shift($tup);
+
+        return $acc;
+    }
+
     public static function arity()
     {
         return call_user_func_array('\Teto\Functools::arity', func_get_args());
@@ -507,6 +520,7 @@ final class Operator
             'include_once' => 'construct_include_once',
             'index_access' => 'index_access',
             'index_assign' => 'index_assign',
+            'tup_to_kv' => 'tup_to_kv',
             'arity' => 'arity',
             'compose' => 'compose',
             'curry' => 'curry',
