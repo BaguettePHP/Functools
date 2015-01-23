@@ -21,4 +21,14 @@ final class ConsTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(2, count($triple->cdr));
         $this->assertSame(1, count($triple->cdr->cdr));
     }
+
+    public function test_pget()
+    {
+        $plist = new Cons(":name", new Cons("Teto Kasane", new Cons(":age", new Cons(31, null))));
+        $undefined = "'undefined";
+
+        $this->assertSame("Teto Kasane", $plist->pget(":name",   $undefined));
+        $this->assertSame(31,            $plist->pget(":age",    $undefined));
+        $this->assertSame($undefined,    $plist->pget(":author", $undefined));
+    }
 }

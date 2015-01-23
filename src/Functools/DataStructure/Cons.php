@@ -70,4 +70,17 @@ final class Cons implements \ArrayAccess, \Countable
     }
 
     public function offsetUnset($_offset) {}
+
+    /**
+     * @param  mixed $key
+     * @param  mixed $default_val
+     * @return mixed
+     */
+    public function pget($key, $default_val = null)
+    {
+        if ($this->car === $key) { return $this[1]; }
+        if ($this->cdr === null) { return $default_val; }
+
+        return $this->cdr->pget($key, $default_val);
+    }
 }
