@@ -61,12 +61,23 @@ final class Functools
     }
 
     /**
-     *
+     * @param  callable $item,...
+     * @return Functools\DataStructure\Cons
      */
-    public static function compose($x, $y)
+    public static function compose()
     {
-        return function ($arg) use ($x, $y) {
-            return $y($x($arg));
+        $fs = func_get_args();
+        $x = array_shift($fs);
+
+        if (empty($x) || empty($fs)) {
+            throw new \LogicException();
+        }
+
+        $y = (count($fs) === 1) ? $fs : call_user_func_array('self::compose', $fs);
+        var_dump($y);
+
+        return function ($a) use ($x, $y) {
+            return $y($x($a));
         };
     }
 

@@ -38,7 +38,7 @@ final class Operator
         if (!self::$operators) { self::initOperators(); }
 
         if (!isset(self::$operators[$symbol])) {
-            throw new \LogicException;
+            throw new \LogicException($symbol);
         }
 
         return [self::getInstance(), self::$operators[$symbol]];
@@ -247,7 +247,10 @@ final class Operator
      *
      * @link http://en.wikipedia.org/wiki/Thunk This technique is known as `thunk'.
      */
-    public static function conditional_lazy($cond, $then, $else) { return $cond() ? $then() : $else(); }
+    public static function conditional_lazy($cond, $then, $else, $v)
+    {
+        return $cond($v) ? $then($v) : $else($v);
+    }
 
     /**
      * @param  mixed $a
@@ -311,6 +314,16 @@ final class Operator
      * @return mixed
      */
     public static function construct_eval($a) { return eval($a); }
+
+    /**
+     * @param  mixed $idx
+     * @param  mixed $a
+     * @return mixed
+     */
+    public static function index_access($idx, $a)
+    {
+        return $a[$idx];
+    }
 
     public static function arity()
     {
@@ -389,6 +402,9 @@ final class Operator
             '!@'  => 'logical_not',
             '!'   => 'logical_not',
             '?:'  => 'elvis',
+            '.'   => 'concatenation',
+            '@[]' => 'index_access',
+            'if'  => 'conditional_lazy',
 
             'id' => 'id',
             'equal' => 'equal',
@@ -431,6 +447,7 @@ final class Operator
             'include' => 'construct_include',
             'require_once' => 'construct_require_once',
             'include_once' => 'construct_include_once',
+            'index_access' => 'index_access',
             'arity' => 'arity',
             'compose' => 'compose',
             'curry' => 'curry',
