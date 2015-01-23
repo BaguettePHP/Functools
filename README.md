@@ -34,6 +34,22 @@ Features
 * `Functools::fix(callable $callback)`
   * [Anonymous recursion](http://en.wikipedia.org/wiki/Anonymous_recursion) ([fixed-point combinator](http://en.wikipedia.org/wiki/Fixed-point_combinator))
 
+Iteration
+---------
+
+This library does not have iterator. You will be able to combine it by selecting a favorite of iterator library.
+
+* PHP [`array`](http://php.net/manual/language.types.array.php) and functions
+  * [PHP: array_map - Manual](http://php.net/manual/function.array-map.php)
+  * [PHP: array_reduce - Manual](http://php.net/manual/function.array-reduce.php)
+  * [PHP: array_filter - Manual](http://php.net/manual/function.array-filter.php)
+* [Underbar.php - A collection processing library for PHP, like Underscore.js.](http://emonkak.github.io/underbar.php/)
+  * [emonkak/underbar.php](https://github.com/emonkak/underbar.php)
+* Ginq
+  * [akanehara/ginq](https://github.com/akanehara/ginq)
+* nikic\iter
+  * [nikic/iter](https://github.com/nikic/iter)
+
 Usage
 -----
 
