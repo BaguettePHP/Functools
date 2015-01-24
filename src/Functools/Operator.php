@@ -348,12 +348,14 @@ final class Operator
      */
     public static function construct_eval($a) { return eval($a); }
 
+    // ===== Index Access =====
+
     /**
      * @param  mixed $idx
      * @param  mixed $a
      * @return mixed
      */
-    public static function index_access($idx, $a)
+    public static function index_get($idx, $a)
     {
         return $a[$idx];
     }
@@ -368,6 +370,75 @@ final class Operator
     {
         $a[$idx] = $v;
         return $v;
+    }
+
+    /**
+     * @param  mixed $idx
+     * @param  mixed $a
+     * @return boolean
+     */
+    public static function index_isset($idx, $a)
+    {
+        return isset($a[$idx]);
+    }
+
+    /**
+     * @param  mixed $idx
+     * @param  mixed $a
+     * @return mixed
+     */
+    public static function index_unset($idx, $a)
+    {
+        unset($a[$idx]);
+
+        return $a;
+    }
+
+    // ===== Property Access =====
+
+    /**
+     * @param  mixed $idx
+     * @param  mixed $a
+     * @return mixed
+     */
+    public static function property_get($idx, $a)
+    {
+        return $a->$idx;
+    }
+
+    /**
+     * @param  mixed $idx
+     * @param  mixed $a
+     * @param  mixed $v
+     * @return mixed
+     */
+    public static function property_assign($idx, $a, $v)
+    {
+        $a->$idx = $v;
+
+        return $v;
+    }
+
+    /**
+     * @param  mixed $idx
+     * @param  mixed $a
+     * @return boolean
+     */
+    public static function property_isset($idx, $a)
+    {
+        return isset($a->$idx);
+    }
+
+    /**
+     * @param  mixed $idx
+     * @param  mixed $a
+     * @return mixed
+     */
+    public static function property_unset($idx, $a)
+    {
+        unset($a->$idx);
+
+        return $a;
     }
 
     /**
@@ -467,9 +538,16 @@ final class Operator
             '!'   => 'logical_not',
             '?:'  => 'elvis',
             '.'   => 'concatenation',
-            '@[]' => 'index_access',
+            '@[]'  => 'index_get',
             '@[]=' => 'index_assign',
-            '[]=' => 'index_assign',
+            '[]='  => 'index_assign',
+            'isset[]' => 'index_isset',
+            'unset[]' => 'index_unset',
+            '@->'  => 'property_get',
+            '@->=' => 'property_assign',
+            '->='  => 'property_assign',
+            'isset->' => 'property_isset',
+            'unset->' => 'property_unset',
             'if'  => 'conditional_lazy',
             '[,]' => 'make_array_double',
             '[,,]' => 'make_array_triple',
@@ -518,8 +596,14 @@ final class Operator
             'include' => 'construct_include',
             'require_once' => 'construct_require_once',
             'include_once' => 'construct_include_once',
-            'index_access' => 'index_access',
+            'index_get'    => 'index_get',
             'index_assign' => 'index_assign',
+            'index_isset'  => 'index_isset',
+            'index_unset'  => 'index_unset',
+            'property_get' => 'property_get',
+            'property_assign' => 'property_assign',
+            'property_isset'  => 'property_isset',
+            'property_unset'  => 'property_unset',
             'tup_to_kv' => 'tup_to_kv',
             'arity' => 'arity',
             'compose' => 'compose',
