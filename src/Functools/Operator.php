@@ -13,7 +13,7 @@ use Teto\Functools as f;
  */
 final class Operator
 {
-    /** @var BinaryOperator */
+    /** @var Operator */
     private static $singleton;
 
     /** @var array */
@@ -21,7 +21,7 @@ final class Operator
 
     private function __construct() {}
 
-    /** @return BinaryOperator */
+    /** @return Operator */
     private static function getInstance()
     {
         if (!self::$singleton) { self::$singleton = new self; }
