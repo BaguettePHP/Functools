@@ -53,6 +53,19 @@ final class Functools
         return new Functools\CurriedCallable($callback, self::arity($callback), []);
     }
 
+    /**
+     * Call function of Functools\Operator
+     */
+    public static function apply($symbol, array $arguments = [])
+    {
+        $op = Functools\Operator::op($symbol);
+
+        return call_user_func_array($op, $arguments);
+    }
+
+    /**
+     * Get callable object from Functools\Operator (and partial application )
+     */
     public static function op($symbol, array $arguments = [], $pos = null)
     {
         $op = Functools\Operator::op($symbol);

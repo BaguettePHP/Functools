@@ -39,6 +39,11 @@ final class FunctoolsTest extends \PHPUnit_Framework_TestCase
         $this->assertNotInstanceOf('Teto\Functools\CurriedCallable', $actual_abc);
     }
 
+    public function test_apply()
+    {
+        $this->assertEquals(3, f::apply('+', [1, 2]));
+    }
+
     public function test_compose()
     {
         $expected = ["2", "4", "6", "8", "10"];
