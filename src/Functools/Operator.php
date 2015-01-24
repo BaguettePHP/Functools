@@ -483,6 +483,88 @@ final class Operator
         return $a;
     }
 
+    // ===== Sort functions wrapper =====
+
+    public static function sort($array, $sort_flags = SORT_REGULAR)
+    {
+        sort($array, $sort_flags);
+
+        return $array;
+    }
+
+    public static function rsort($array, $sort_flags = SORT_REGULAR)
+    {
+        rsort($array, $sort_flags);
+
+        return $array;
+    }
+
+    public static function asort($array, $sort_flags = SORT_REGULAR)
+    {
+        asort($array, $sort_flags);
+
+        return $array;
+    }
+
+    public static function arsort($array, $sort_flags = SORT_REGULAR)
+    {
+        arsort($array, $sort_flags);
+
+        return $array;
+    }
+
+    public static function ksort($array, $sort_flags = SORT_REGULAR)
+    {
+        ksort($array, $sort_flags);
+
+        return $array;
+    }
+
+    public static function krsort($array, $sort_flags = SORT_REGULAR)
+    {
+        krsort($array, $sort_flags);
+
+        return $array;
+    }
+
+    public static function usort($array, callable $value_compare_func)
+    {
+        usort($array, $value_compare_func);
+
+        return $array;
+    }
+
+    public static function uasort($array, callable $value_compare_func)
+    {
+        uasort($array, $value_compare_func);
+
+        return $array;
+    }
+
+    public static function uksort($array, callable $key_compare_func)
+    {
+        uksort($array, $key_compare_func);
+
+        return $array;
+    }
+
+    public static function natsort($array)
+    {
+        natsort($array);
+
+        return $array;
+    }
+
+    public static function natcasesort($array)
+    {
+        natcasesort($array);
+
+        return $array;
+    }
+
+
+    // ===== Utility =====
+
     /**
      * @param  mixed $acc
      * @param  array $tup
@@ -495,6 +577,8 @@ final class Operator
 
         return $acc;
     }
+
+    // ===== Functools Functions =====
 
     public static function arity()
     {
@@ -653,6 +737,18 @@ final class Operator
             'property_assign' => 'property_assign',
             'property_isset'  => 'property_isset',
             'property_unset'  => 'property_unset',
+            'sort'    => 'sort',
+            'rsort'   => 'rsort',
+            'asort'   => 'asort',
+            'arsort'  => 'arsort',
+            'ksort'   => 'ksort',
+            'krsort'  => 'krsort',
+            'usort'   => 'usort',
+            'uasort'  => 'uasort',
+            'uksort'  => 'uksort',
+            'natsort' => 'natsort',
+            'natcasesort' => 'natcasesort',
+
             'tup_to_kv' => 'tup_to_kv',
             'arity' => 'arity',
             'compose' => 'compose',
