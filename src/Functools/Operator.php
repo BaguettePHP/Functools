@@ -108,6 +108,94 @@ final class Operator
      */
     public static function greater_than_or_equal_to($a, $b) { return $a >= $b; }
 
+    /**
+     * @param  mixed $begin
+     * @param  mixed $ends
+     * @param  mixed $val
+     * @return boolean
+     */
+    public static function lt_and_lt($begin, $ends, $val)
+    {
+        return ($begin < $val) && ($val < $ends);
+    }
+
+    /**
+     * @param  mixed $begin
+     * @param  mixed $ends
+     * @param  mixed $val
+     * @return boolean
+     */
+    public static function le_and_lt($begin, $ends, $val)
+    {
+        return ($begin <= $val) && ($val < $ends);
+    }
+
+    /**
+     * @param  mixed $begin
+     * @param  mixed $ends
+     * @param  mixed $val
+     * @return boolean
+     */
+    public static function lt_and_le($begin, $ends, $val)
+    {
+        return ($begin < $val) && ($val <= $ends);
+    }
+
+    /**
+     * @param  mixed $begin
+     * @param  mixed $ends
+     * @param  mixed $val
+     * @return boolean
+     */
+    public static function le_and_le($begin, $ends, $val)
+    {
+        return ($begin <= $val) && ($val <= $ends);
+    }
+
+    /**
+     * @param  mixed $begin
+     * @param  mixed $ends
+     * @param  mixed $val
+     * @return boolean
+     */
+    public static function gt_and_gt($begin, $ends, $val)
+    {
+        return ($begin > $val) && ($val > $ends);
+    }
+
+    /**
+     * @param  mixed $begin
+     * @param  mixed $ends
+     * @param  mixed $val
+     * @return boolean
+     */
+    public static function ge_and_gt($begin, $ends, $val)
+    {
+        return ($begin >= $val) && ($val > $ends);
+    }
+
+    /**
+     * @param  mixed $begin
+     * @param  mixed $ends
+     * @param  mixed $val
+     * @return boolean
+     */
+    public static function gt_and_ge($begin, $ends, $val)
+    {
+        return ($begin > $val) && ($val >= $ends);
+    }
+
+    /**
+     * @param  mixed $begin
+     * @param  mixed $ends
+     * @param  mixed $val
+     * @return boolean
+     */
+    public static function ge_and_ge($begin, $ends, $val)
+    {
+        return ($begin >= $val) && ($val >= $ends);
+    }
+
     // ===== Arithmetic Operators =====
 
     /**
@@ -639,6 +727,14 @@ final class Operator
             '>'   => 'greater_than',
             '<='  => 'less_than_or_equal_to',
             '>='  => 'greater_than_or_equal_to',
+            '<@<'   => 'lt_and_lt',
+            '<=@<'  => 'le_and_lt',
+            '<@<='  => 'lt_and_le',
+            '<=@<=' => 'le_and_le',
+            '>@>'   => 'gt_and_gt',
+            '>=@>'  => 'ge_and_gt',
+            '>@>='  => 'gt_and_ge',
+            '>=@>=' => 'ge_and_ge',
             'lt'  => 'less_than',
             'gt'  => 'greater_than',
             'le'  => 'less_than_or_equal_to',
@@ -692,6 +788,14 @@ final class Operator
             'greater_than' => 'greater_than',
             'less_than_or_equal_to' => 'less_than_or_equal_to',
             'greater_than_or_equal_to' => 'greater_than_or_equal_to',
+            'lt_and_lt' => 'lt_and_lt',
+            'le_and_lt' => 'le_and_lt',
+            'lt_and_le' => 'lt_and_le',
+            'le_and_le' => 'le_and_le',
+            'gt_and_gt' => 'gt_and_gt',
+            'ge_and_gt' => 'ge_and_gt',
+            'gt_and_ge' => 'gt_and_ge',
+            'ge_and_ge' => 'ge_and_ge',
             'negation' => 'negation',
             'addition' => 'addition',
             'subtraction' => 'subtraction',
