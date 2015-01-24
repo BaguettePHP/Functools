@@ -323,6 +323,48 @@ final class Operator
     public static function construct_print($a) { return print $a; }
 
     /**
+     * @param  mixed  $operand
+     * @param  mixed  $idx
+     * @param  string $access "[]"|"->"
+     * @note This function does not use default argument.
+     */
+    public static function construct_isset($operand, $idx = null, $access = null) {
+        $args = func_get_args();
+        $operand = array_shift($args);
+
+        if (!$args) { return isset($operand); }
+        $idx = array_shift($args);
+        if (is_array($operand)) { return isset($operand[$idx]); }
+        $access = array_shift($args) ?: '->';
+
+        return ($access === '[]')
+            ? isset($operand[$idx])
+            : isset($operand->$idx)
+            ;
+    }
+
+    /**
+     * @param  mixed  $operand
+     * @param  mixed  $idx
+     * @param  string $access "[]"|"->"
+     * @note This function does not use default argument.
+     */
+    public static function construct_empty($operand, $idx = null, $access = null) {
+        $args = func_get_args();
+        $operand = array_shift($args);
+
+        if (!$args) { return empty($operand); }
+        $idx = array_shift($args);
+        if (is_array($operand)) { return empty($operand[$idx]); }
+        $access = array_shift($args) ?: '->';
+
+        return ($access === '[]')
+            ? empty($operand[$idx])
+            : empty($operand->$idx)
+            ;
+    }
+
+    /**
      * @param  mixed $a
      */
     public static function construct_require($a) { return require $a; }
@@ -588,6 +630,8 @@ final class Operator
             'make_array_triple' => 'make_array_triple',
             'echo'  => 'construct_echo',
             'print' => 'construct_print',
+            'isset' => 'construct_isset',
+            'empty' => 'construct_empty',
             'eval'  => 'construct_eval',
             'echo'  => 'construct_echo',
             'print' => 'construct_print',
