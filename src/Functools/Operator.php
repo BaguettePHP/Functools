@@ -37,11 +37,13 @@ final class Operator
     {
         if (!self::$operators) { self::initOperators(); }
 
-        if (!isset(self::$operators[$symbol])) {
+        $sym = preg_replace('/ *@ */', '@', $symbol);
+
+        if (!isset(self::$operators[$sym])) {
             throw new \LogicException($symbol);
         }
 
-        return [self::getInstance(), self::$operators[$symbol]];
+        return [self::getInstance(), self::$operators[$sym]];
     }
 
     /**
