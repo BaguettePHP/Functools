@@ -511,6 +511,11 @@ final class Operator
         return call_user_func_array('\Teto\Functools::compose', func_get_args());
     }
 
+    public static function cons()
+    {
+        return call_user_func_array('\Teto\Functools::cons', func_get_args());
+    }
+
     public static function tuple()
     {
         return call_user_func_array('\Teto\Functools::tuple', func_get_args());
@@ -652,6 +657,7 @@ final class Operator
             'arity' => 'arity',
             'compose' => 'compose',
             'curry' => 'curry',
+            'cons' => 'cons',
             'tuple' => 'tuple',
             's' => 's',
             'k' => 'k',

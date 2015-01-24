@@ -81,6 +81,16 @@ final class Functools
     }
 
     /**
+     * @param  mixed $car
+     * @param  mixed $cdr
+     * @return Functools\DataStructure\Cons
+     */
+    public static function cons($car, $cdr)
+    {
+        return new Functools\DataStructure\Cons($car, $cdr);
+    }
+
+    /**
      * @param  mixed $item,...
      * @return Functools\DataStructure\Cons
      */
