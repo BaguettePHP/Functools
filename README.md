@@ -20,6 +20,16 @@ composer require zonuexe/functools
 Features
 --------
 
+* `Functools\Operator`
+  * Operator Expression wrapper
+    * Binary operator `1 + 2` `$a === "abc"` `$date instanceof '\Datetime'`
+    * Conditional operator `$cond ? $then : $else`
+    * Lazy Conditional operator `$cond($v) ? $then($v) : $else($v)` ([thunk](http://en.wikipedia.org/wiki/Thunk))
+  * [Referential transparent](http://en.wikipedia.org/wiki/Referential_transparency_%28computer_science%29) version [sorting array functions](http://php.net/manual/array.sorting.php).
+    * You can `array_map(f::op('ksort'), $arrays)` !
+  * Language-construct wrapper
+    * `echo`, `print`, `eval`, `require`, `require_once`, `include`, `include_once`
+    * limited support: `array`, `isset`, `empty`
 * `Functools::partial(callable $callback, array $arguments, int $pos)`
   * Partial application for [callable](http://php.net/manual/language.types.callable.php) (`arary_map` friendly)
 * `Functools::arity(callable $callback)`

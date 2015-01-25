@@ -486,6 +486,35 @@ final class Operator
      */
     public static function construct_eval($a) { return eval($a); }
 
+    /**
+     * @param  mixed $item,...
+     * @return array
+     */
+    public static function construct_array($item = null) {
+        $items = func_get_args();
+
+        if (empty($items)) { return []; }
+
+        $item  = array_shift($items);
+
+        if (empty($items)) { return [$item]; }
+
+        return array_merge(
+            [$item],
+            call_user_func_array('self::construct_array', $items)
+        );
+    }
+
+    /**
+     * @param int|string
+     */
+    public static function construct_exit($status = 0) { exit($status); }
+
+    /**
+     * @param int|string
+     */
+    public static function construct_die($status = 1) { die($status); }
+
     // ===== Index Access =====
 
     /**
@@ -834,6 +863,9 @@ final class Operator
             'isset' => 'construct_isset',
             'empty' => 'construct_empty',
             'eval'  => 'construct_eval',
+            'array' => 'construct_array',
+            'exit'  => 'construct_exit',
+            'die'   => 'construct_die',
             'require' => 'construct_require',
             'include' => 'construct_include',
             'require_once' => 'construct_require_once',
