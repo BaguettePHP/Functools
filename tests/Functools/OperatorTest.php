@@ -146,4 +146,15 @@ final class OperatorTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue( _::construct_empty($tuple, 5, '[]'));
         $this->assertTrue( _::construct_empty($tuple, 6, '[]'));
     }
+
+    public function test_array()
+    {
+        $this->assertEquals([],     _::construct_array());
+        $this->assertEquals([1],    _::construct_array(1));
+        $this->assertEquals([1, 2], _::construct_array(1, 2));
+        $this->assertEquals(
+            [[1], [2]],
+            _::construct_array(_::construct_array(1), _::construct_array(2))
+        );
+    }
 }
