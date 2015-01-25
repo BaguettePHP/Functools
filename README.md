@@ -53,6 +53,8 @@ This library does not have iterator. You will be able to combine it by selecting
 Usage
 -----
 
+Japanese version: http://qiita.com/tadsan/items/abc52f0739ab5b4e781b
+
 ### Short syntax
 
 ```php
@@ -62,8 +64,8 @@ use Teto\Functools as f;
 ### f::partial()
 
 ```php
-$colon = f::partial("implode", [", "]);
-$colon(range(1, 10));
+$comma = f::partial("implode", [", "]);
+$comma(range(1, 10));
 // "1, 2, 3, 4, 5, 6, 7, 8, 9, 10"
 
 $join_10 = f::partial("implode", [1 => range(1, 10)], 0);

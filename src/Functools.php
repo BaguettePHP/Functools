@@ -14,7 +14,12 @@ final class Functools
     private function __construct() {}
 
     /**
-     * @return PartialCallable
+     * Partial application
+     *
+     * @param  callable $callback
+     * @param  mixed[]  $arguments
+     * @param  int      $pos
+     * @return \Teto\Functools\PartialCallable
      */
     public static function partial(callable $callback, array $arguments = [], $pos = null)
     {
@@ -46,7 +51,7 @@ final class Functools
      * Make curried callable object
      *
      * @param  callable $callback
-     * @return Functools\CurriedCallable
+     * @return \Teto\Functools\CurriedCallable
      */
     public static function curry(callable $callback)
     {
@@ -55,6 +60,10 @@ final class Functools
 
     /**
      * Call function of Functools\Operator
+     *
+     * @param  string   $symbol
+     * @param  mixed[]  $arguments
+     * @return mixed
      */
     public static function apply($symbol, array $arguments = [])
     {
@@ -64,7 +73,13 @@ final class Functools
     }
 
     /**
-     * Get callable object from Functools\Operator (and partial application )
+     * Get callable object from Functools\Operator (and partial application)
+     *
+     * @param  string   $symbol
+     * @param  mixed[]  $arguments
+     * @param  int      $pos
+     * @return callable
+     * @see \Teto\Functools\Operator::op()
      */
     public static function op($symbol, array $arguments = [], $pos = null)
     {
@@ -74,18 +89,23 @@ final class Functools
     }
 
     /**
-     * @param  callable $item,...
-     * @return Functools\DataStructure\Cons
+     * Compose functions
+     *
+     * @param  callable $f
+     * @param  callable $g,...
+     * @return callable
      */
-    public static function compose()
+    public static function compose(callable $f, callable $g)
     {
         $fs = func_get_args();
+        /** @var callable $f */
         $f  = array_shift($fs);
 
         if (empty($f) || empty($fs)) {
             throw new \LogicException();
         }
 
+        /** @var callable $g */
         $g = (count($fs) === 1) ? array_shift($fs) : call_user_func_array('self::compose', $fs);
 
         return function ($a) use ($f, $g) {
@@ -94,9 +114,11 @@ final class Functools
     }
 
     /**
+     * Make new cons cell
+     *
      * @param  mixed $car
      * @param  mixed $cdr
-     * @return Functools\DataStructure\Cons
+     * @return \Teto\Functools\DataStructure\Cons
      */
     public static function cons($car, $cdr)
     {
@@ -104,10 +126,12 @@ final class Functools
     }
 
     /**
+     * Make n-tuple
+     *
      * @param  mixed $item,...
-     * @return Functools\DataStructure\Cons
+     * @return \Teto\Functools\DataStructure\Cons
      */
-    public static function tuple()
+    public static function tuple($item)
     {
         $items = func_get_args();
         $car = array_shift($items);
@@ -119,7 +143,10 @@ final class Functools
     }
 
     /**
-     * Fixed point combinator (Z combinator)
+     * Fixed point operator (Z combinator)
+     *
+     * @param  callable $f
+     * @return callable
      */
     public static function fix(callable $f)
     {

@@ -9,6 +9,8 @@ phpunit  = "#{bin}/phpunit"
 report = "#{dir}/report"
 report_coverage = "#{report}/coverage"
 
+log_coverage = "build/logs/clover.xml"
+
 task :default => %(all)
 
 desc 'Run `doc`, `test` task'
@@ -42,7 +44,7 @@ namespace :test do
   desc 'Run unit test and generate code coverage'
   task :coverage do
     FileUtils.mkdir_p(report_coverage) unless FileTest.directory?(report_coverage)
-    sh "#{phpunit} --coverage-html=#{report_coverage}"
+    sh "#{phpunit} --coverage-clover=#{log_coverage} --coverage-html=#{report_coverage}"
   end
 end
 

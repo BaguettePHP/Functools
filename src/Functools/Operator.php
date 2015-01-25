@@ -202,7 +202,6 @@ final class Operator
 
     /**
      * @param  mixed $a
-     * @param  mixed $b
      * @return int|float
      */
     public static function negation($a) { return -$a; }
@@ -376,7 +375,7 @@ final class Operator
      */
     public static function method($receiver, $method)
     {
-        return [$a, $b];
+        return [$receiver, $method];
     }
 
     /**
@@ -409,6 +408,7 @@ final class Operator
 
     /**
      * @param  mixed $a
+     * @return int
      */
     public static function construct_print($a) { return print $a; }
 
@@ -416,6 +416,7 @@ final class Operator
      * @param  mixed  $operand
      * @param  mixed  $idx
      * @param  string $access "[]"|"->"
+     * @return boolean
      * @note This function does not use default argument.
      */
     public static function construct_isset($operand, $idx = null, $access = null) {
@@ -437,6 +438,7 @@ final class Operator
      * @param  mixed  $operand
      * @param  mixed  $idx
      * @param  string $access "[]"|"->"
+     * @return boolean
      * @note This function does not use default argument.
      */
     public static function construct_empty($operand, $idx = null, $access = null) {
@@ -456,21 +458,25 @@ final class Operator
 
     /**
      * @param  mixed $a
+     * @return mixed
      */
     public static function construct_require($a) { return require $a; }
 
     /**
      * @param  mixed $a
+     * @return mixed
      */
     public static function construct_include($a) { return include $a; }
 
     /**
      * @param  mixed $a
+     * @return mixed
      */
     public static function construct_require_once($a) { return require_once $a; }
 
     /**
      * @param  mixed $a
+     * @return mixed
      */
     public static function construct_include_once($a) { return include_once $a; }
 
@@ -711,7 +717,7 @@ final class Operator
     public static function i($a)
     {
         $_ = self::getInstance();
-        $s = [$_, 's'];
+        $s = [$_, 's']; /** @var callable $s */
         $k = f::curry([$_, 'k']);
 
         return $s($k, $k, $a);
@@ -827,9 +833,6 @@ final class Operator
             'print' => 'construct_print',
             'isset' => 'construct_isset',
             'empty' => 'construct_empty',
-            'eval'  => 'construct_eval',
-            'echo'  => 'construct_echo',
-            'print' => 'construct_print',
             'eval'  => 'construct_eval',
             'require' => 'construct_require',
             'include' => 'construct_include',

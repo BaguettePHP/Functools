@@ -60,6 +60,16 @@ final class FunctoolsTest extends \PHPUnit_Framework_TestCase
     {
         $expected = new Cons("foo", new Cons("bar", new Cons("buz", null)));
         $actual = f::tuple("foo", "bar", "buz");
+
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function test_cons()
+    {
+        $expected = new Cons("foo", new Cons("bar", new Cons("buz", null)));
+        $actual = f::cons("foo", f::cons("bar", f::cons("buz", null)));
+
+        $this->assertEquals($expected, $actual);
     }
 
     public function test_fix()

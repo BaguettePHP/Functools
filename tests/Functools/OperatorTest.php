@@ -104,6 +104,14 @@ final class OperatorTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue( _::construct_isset($tuple, 4, '[]'));
         $this->assertFalse(_::construct_isset($tuple, 5, '[]'));
         $this->assertFalse(_::construct_isset($tuple, 6, '[]'));
+
+        $this->assertTrue( _::index_isset(0, $tuple));
+        $this->assertTrue( _::index_isset(1, $tuple));
+        $this->assertTrue( _::index_isset(2, $tuple));
+        $this->assertFalse(_::index_isset(3, $tuple));
+        $this->assertTrue( _::index_isset(4, $tuple));
+        $this->assertFalse(_::index_isset(5, $tuple));
+        $this->assertFalse(_::index_isset(6, $tuple));
     }
 
     public function test_empty()
