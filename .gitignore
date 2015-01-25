@@ -1,6 +1,9 @@
+/build/logs
 /build/phpdox
 /build/phploc
 /composer.lock
 /docs
 /phpunit.xml
 /vendor/*
+/.idea
+/*.iml

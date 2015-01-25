@@ -35,7 +35,7 @@ final class PartialCallable
      * @param  mixed $arg,...
      * @return mixed
      */
-    public function __invoke()
+    public function __invoke($arg = null)
     {
         return call_user_func_array($this->callback, $this->arguments(func_get_args()));
     }

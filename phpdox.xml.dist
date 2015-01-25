@@ -3,7 +3,7 @@
     <bootstrap />
 
     <!-- A phpDox project to process, you can have multiple projects in one config file -->
-    <project name="functools" source="${basedir}/src" workdir="${basedir}/build/phpdox/xml">
+    <project name="Teto Functools" source="${basedir}/src" workdir="${basedir}/build/phpdox/xml">
         <collector publiconly="false" backend="parser">
             <include mask="*.php" />
             <exclude mask="" />
@@ -17,10 +17,7 @@
             <enrich base="${basedir}/build">
                 <source type="build" />
                 <source type="phploc" />
-                <source type="git">
-                    <git binary="/usr/bin/git" />
-                    <history enabled="true" limit="15" cache="${phpDox.project.workdir}/gitlog.xml" />
-                </source>
+                <source type="git" />
                 <!--<source type="checkstyle">-->
                     <!-- @type - the handler for the enrichment -->
                     <!--         known types by default are: checkstyle, pmd, clover, phpunit -->
@@ -35,8 +32,7 @@
             </enrich>
 
             <build engine="html" enabled="true" output="html">
-                <template dir="${phpDox.home}/templates/html" />
-                <file extension="xhtml" />
+                <file extension="html" />
             </build>
         </generator>
     </project>

@@ -41,7 +41,8 @@ final class Cons implements \ArrayAccess, \Countable
     }
 
     /**
-     * @param int $offset
+     * @param  int $offset
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -54,7 +55,8 @@ final class Cons implements \ArrayAccess, \Countable
     /**
      * Lisp nth
      *
-     * @param int $offset
+     * @param  int $offset
+     * @return boolean
      */
     public function offsetGet($offset)
     {
@@ -64,17 +66,25 @@ final class Cons implements \ArrayAccess, \Countable
         return $this->cdr[$offset - 1];
     }
 
+    /**
+     * @param  mixed $_offset
+     * @param  mixed $_value
+     * @throws \OutOfRangeException
+     */
     public function offsetSet($_offset, $_value)
     {
-        throw new \LogicException;
+        throw new \OutOfRangeException;
     }
 
     public function offsetUnset($_offset) {}
 
     /**
+     * Get by property
+     *
      * @param  mixed $key
      * @param  mixed $default_val
      * @return mixed
+     * @note   It is similar to `plist-get' of Lisp
      */
     public function pget($key, $default_val = null)
     {
@@ -88,6 +98,7 @@ final class Cons implements \ArrayAccess, \Countable
      * @param  mixed $key
      * @param  mixed $default_val
      * @return mixed
+     * @note   It is similar to `assoc' of Lisp
      */
     public function assoc($key, $default_val = null)
     {
@@ -101,6 +112,7 @@ final class Cons implements \ArrayAccess, \Countable
      * @param  mixed $key
      * @param  mixed $default_val
      * @return mixed
+     * @note   It is similar to `rassoc' of Lisp
      */
     public function rassoc($key, $default_val = null)
     {
