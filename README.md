@@ -3,7 +3,8 @@ Teto Functools
 
 [![Package version](http://img.shields.io/packagist/v/zonuexe/functools.svg?style=flat)](https://packagist.org/packages/zonuexe/functools)
 [![Build Status](https://travis-ci.org/zonuexe/php-functools.svg?branch=master)](https://travis-ci.org/zonuexe/php-functools)
-[![Packagist](http://img.shields.io/packagist/dt/zonuexe/php-functools.svg?style=flat)](https://packagist.org/packages/zonuexe/functools)
+[![Packagist](http://img.shields.io/packagist/dt/zonuexe/functools.svg?style=flat)](https://packagist.org/packages/zonuexe/functools)
+[![Coverage Status](https://coveralls.io/repos/zonuexe/php-functools/badge.svg)](https://coveralls.io/r/zonuexe/php-functools)
 
 Functional toolbox for PHP
 
