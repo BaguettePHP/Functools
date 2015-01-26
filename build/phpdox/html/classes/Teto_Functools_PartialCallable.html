@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Teto\Functools\PartialCallable</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.html">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html#Teto_Functools">Teto\Functools</a>
+          </li>
+          <li class="separator">PartialCallable</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+          <li>
+            <a href="../source/Functools/PartialCallable.php.xhtml#line13">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Teto\Functools\</small>PartialCallable</h1>
+        <h4>array_map compatible partial application wrapper</h4>
+        <p/>
+        <ul>
+          <li>Author: USAMI Kenta &lt;tadsan@zonu.me&gt;</li>
+          <li>Copyright: 2015 USAMI Kenta</li>
+          <li>License: http://www.apache.org/licenses/LICENSE-2.0</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class PartialCallable
+            {<br/><ul class="none"><li>// members</li><li>private <span title="Teto\Functools\callable">callable</span> <a href="#members">$callback</a>;
+                    </li><li>private array <a href="#members">$arguments</a>;
+                    </li><li>private <span title="Teto\Functools\int|null">int|null</span> <a href="#members">$pos</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Teto\Functools\PartialCallable" href="../classes/Teto_Functools_PartialCallable/__construct.html">__construct</a>()
+                    </li><li>public mixed <a title="Teto\Functools\PartialCallable" href="../classes/Teto_Functools_PartialCallable/__invoke.html">__invoke</a>()
+                    </li><li>public PartialCallable <a title="Teto\Functools\PartialCallable" href="../classes/Teto_Functools_PartialCallable/partial.html">partial</a>()
+                    </li><li>private void <a title="Teto\Functools\PartialCallable" href="../classes/Teto_Functools_PartialCallable/arguments.html">arguments</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="arguments"><strong>$arguments</strong>
+                —
+                array</li>
+            <li id="callback"><strong>$callback</strong>
+                —
+                <a href="#">Teto\Functools\callable</a></li>
+            <li id="pos"><strong>$pos</strong>
+                —
+                <a href="#">Teto\Functools\int|null</a></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="arguments">
+              <a title="Teto\Functools\PartialCallable" href="../classes/Teto_Functools_PartialCallable/arguments.html">arguments()</a>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="Teto\Functools\PartialCallable" href="../classes/Teto_Functools_PartialCallable/__construct.html">__construct()</a>
+            </li>
+            <li id="__invoke">
+              <a title="Teto\Functools\PartialCallable" href="../classes/Teto_Functools_PartialCallable/__invoke.html">__invoke()</a>
+            </li>
+            <li id="partial"><a title="Teto\Functools\PartialCallable" href="../classes/Teto_Functools_PartialCallable/partial.html">partial()</a>
+                — Make partially applied function</li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul class="styled history">
+          <li>
+            <h3>2015-01-26T01:18:25+09:00 (commit #<span title="8a4030f9399fcad5fb42cdbff649336bb2cd9415">8a4030f</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Fixes</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-24T04:33:50+09:00 (commit #<span title="571760bdcb65e9254e9b26d1a27f935f9a63b6cd">571760b</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Reform PartialCallable</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-23T23:55:04+09:00 (commit #<span title="7e299e713d71ff4b98c58f7732361a911774c81f">7e299e7</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Fix Functools\PartialCallable
+
+負数が指定されたときは、実行時に引数を渡さない</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-22T21:38:15+09:00 (commit #<span title="be79b0ad5b4942ea579439d8625cfe948352c02c">be79b0a</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Add PartialCallabte::partial()</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-22T03:20:47+09:00 (commit #<span title="223ddbc87a7468e44412bad6090f9914aacc74de">223ddbc</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Move file structure</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-21T21:09:04+09:00 (commit #<span title="b20e5ca803457ef31770b7f522648ed9c890aea2">b20e5ca</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Init repository</pre>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 161ef37-dirty - Copyright (C) 2010 - 2015 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

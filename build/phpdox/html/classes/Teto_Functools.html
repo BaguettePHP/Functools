@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Teto\Functools</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.html">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html#Teto">Teto</a>
+          </li>
+          <li class="separator">Functools</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+          <li>
+            <a href="../source/Functools.php.xhtml#line12">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Teto\</small>Functools</h1>
+        <h4>Functional toolbox</h4>
+        <p/>
+        <ul>
+          <li>Author: USAMI Kenta &lt;tadsan@zonu.me&gt;</li>
+          <li>Copyright: 2015 USAMI Kenta</li>
+          <li>License: http://www.apache.org/licenses/LICENSE-2.0</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Functools
+            {<br/><ul class="none"><li>// methods</li><li>private void <a title="Teto\Functools" href="../classes/Teto_Functools/__construct.html">__construct</a>()
+                    </li><li>public static PartialCallable <a title="Teto\Functools" href="../classes/Teto_Functools/partial.html">partial</a>()
+                    </li><li>public static int <a title="Teto\Functools" href="../classes/Teto_Functools/arity.html">arity</a>()
+                    </li><li>public static CurriedCallable <a title="Teto\Functools" href="../classes/Teto_Functools/curry.html">curry</a>()
+                    </li><li>public static mixed <a title="Teto\Functools" href="../classes/Teto_Functools/apply.html">apply</a>()
+                    </li><li>public static callable <a title="Teto\Functools" href="../classes/Teto_Functools/op.html">op</a>()
+                    </li><li>public static callable <a title="Teto\Functools" href="../classes/Teto_Functools/compose.html">compose</a>()
+                    </li><li>public static Cons <a title="Teto\Functools" href="../classes/Teto_Functools/cons.html">cons</a>()
+                    </li><li>public static Cons <a title="Teto\Functools" href="../classes/Teto_Functools/tuple.html">tuple</a>()
+                    </li><li>public static callable <a title="Teto\Functools" href="../classes/Teto_Functools/fix.html">fix</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="apply"><a title="Teto\Functools" href="../classes/Teto_Functools/apply.html">apply()</a>
+                — Call function of Functools\Operator</li>
+            <li id="arity"><a title="Teto\Functools" href="../classes/Teto_Functools/arity.html">arity()</a>
+                — Returns an indication of the number of arguments accepted by a callable.</li>
+            <li id="compose"><a title="Teto\Functools" href="../classes/Teto_Functools/compose.html">compose()</a>
+                — Compose functions</li>
+            <li id="cons"><a title="Teto\Functools" href="../classes/Teto_Functools/cons.html">cons()</a>
+                — Make new cons cell</li>
+            <li id="curry"><a title="Teto\Functools" href="../classes/Teto_Functools/curry.html">curry()</a>
+                — Make curried callable object</li>
+            <li id="fix"><a title="Teto\Functools" href="../classes/Teto_Functools/fix.html">fix()</a>
+                — Fixed point operator (Z combinator)</li>
+            <li id="op"><a title="Teto\Functools" href="../classes/Teto_Functools/op.html">op()</a>
+                — Get callable object from Functools\Operator (and partial application)</li>
+            <li id="partial"><a title="Teto\Functools" href="../classes/Teto_Functools/partial.html">partial()</a>
+                — Partial application</li>
+            <li id="tuple"><a title="Teto\Functools" href="../classes/Teto_Functools/tuple.html">tuple()</a>
+                — Make n-tuple</li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul class="styled history">
+          <li>
+            <h3>2015-01-27T00:22:57+09:00 (commit #<span title="a5e5bba63e22a15b5c192222c35615b526d02414">a5e5bba</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Fix (including the specification change)</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-26T01:18:25+09:00 (commit #<span title="8a4030f9399fcad5fb42cdbff649336bb2cd9415">8a4030f</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Fixes</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-24T18:20:56+09:00 (commit #<span title="714a3cfbc82e82ddfa88b6dc69ec5df37809b73b">714a3cf</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Impl Functools::apply()</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-24T16:39:53+09:00 (commit #<span title="0c5b10b8a062b31863c2d102c2f4ea1d475261fe">0c5b10b</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Add Functools::cons()</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-23T22:59:03+09:00 (commit #<span title="73f5fbb0a7079797d7c4438b1c457d70fdd3a0d9">73f5fbb</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Move Operator::fix() -&gt; Functools::fix()</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-23T11:07:29+09:00 (commit #<span title="582f91e17e974c048eba542d87fdf6852c7b48c9">582f91e</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Fix Functools::compose()</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-23T10:32:53+09:00 (commit #<span title="0c9cea030946918640a2fa65b15d57e964d1a624">0c9cea0</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Fix (remove var_dump() X-D)</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-23T10:25:17+09:00 (commit #<span title="57bfdd5a6670da2d1c751e4b834733266b4d946d">57bfdd5</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Update Functools</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-23T01:43:50+09:00 (commit #<span title="86b4f116e129482313455ced2e942ac3d381dbae">86b4f11</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Fix Functools::op() and Add operators</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-23T01:15:42+09:00 (commit #<span title="06278ca929e170406c9e5710aa5f616f28df72f2">06278ca</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Add Functools::tuple()</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-22T21:54:13+09:00 (commit #<span title="42b2865cf30952f3944d1b4ed0c7e30decec20cb">42b2865</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Add Functools::compose()</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-22T21:16:07+09:00 (commit #<span title="85c5a8f3b5cee4bd3ce30b365972deeac225860e">85c5a8f</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Add Functools::arity(), Functools::curry()</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-22T03:39:08+09:00 (commit #<span title="9b8cdb31148d522951743b1698b8408e59cfced0">9b8cdb3</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Add Functools class</pre>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 161ef37-dirty - Copyright (C) 2010 - 2015 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

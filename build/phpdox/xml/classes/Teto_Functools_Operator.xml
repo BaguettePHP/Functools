@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Teto\Functools\Operator" namespace="Teto\Functools" name="Operator" abstract="false" final="true" start="14" end="912">
+  <file path="/Users/megurine/repo/php/php-functools/src/Functools" file="Operator.php" realpath="/Users/megurine/repo/php/php-functools/src/Functools/Operator.php" size="22354" time="2015-01-26T23:59:54+09:00" unixtime="1422284394" sha1="52c59410b1e4ceee1890e4c487cf66bba3955880" relative="Functools/Operator.php"/>
+  <docblock>
+    <description compact="Object an abstraction of the operator expression"/>
+    <package value="Teto"/>
+    <subpackage value="Functools"/>
+    <author value="USAMI Kenta &lt;tadsan@zonu.me&gt;"/>
+    <copyright value="2015 USAMI Kenta"/>
+    <license name="http://www.apache.org/licenses/LICENSE-2.0"/>
+  </docblock>
+  <member name="singleton" type="{unknown}" visibility="private" line="17">
+    <docblock>
+      <var type="object">
+        <type full="Teto\Functools\Operator" namespace="Teto\Functools" name="Operator"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="operators" type="{unknown}" visibility="private" line="20">
+    <docblock>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="22" end="22" abstract="false" final="false" static="false" visibility="private"/>
+  <method name="getInstance" start="25" end="30" abstract="false" final="false" static="true" visibility="private">
+    <docblock>
+      <return type="object">
+        <type full="Teto\Functools\Operator" namespace="Teto\Functools" name="Operator"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="op" start="37" end="49" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$symbol"/>
+      <return type="object">
+        <type full="Teto\Functools\callable" namespace="Teto\Functools" name="callable"/>
+      </return>
+      <throws type="object">
+        <type full="\BadMethodCallException" namespace="" name="BadMethodCallException"/>
+      </throws>
+    </docblock>
+    <parameter name="symbol" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="id" start="55" end="55" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="equal" start="64" end="64" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <param type="mixed" variable="$b"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="identical" start="71" end="71" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <param type="mixed" variable="$b"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="not_equal" start="78" end="78" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <param type="mixed" variable="$b"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="not_identical" start="85" end="85" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <param type="mixed" variable="$b"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="less_than" start="92" end="92" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <param type="mixed" variable="$b"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="greater_than" start="99" end="99" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <param type="mixed" variable="$b"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="less_than_or_equal_to" start="106" end="106" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <param type="mixed" variable="$b"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="greater_than_or_equal_to" start="113" end="113" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <param type="mixed" variable="$b"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="lt_and_lt" start="121" end="124" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$begin"/>
+      <param type="mixed" variable="$ends"/>
+      <param type="mixed" variable="$val"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="begin" byreference="false" type="{unknown}"/>
+    <parameter name="ends" byreference="false" type="{unknown}"/>
+    <parameter name="val" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="le_and_lt" start="132" end="135" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$begin"/>
+      <param type="mixed" variable="$ends"/>
+      <param type="mixed" variable="$val"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="begin" byreference="false" type="{unknown}"/>
+    <parameter name="ends" byreference="false" type="{unknown}"/>
+    <parameter name="val" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="lt_and_le" start="143" end="146" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$begin"/>
+      <param type="mixed" variable="$ends"/>
+      <param type="mixed" variable="$val"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="begin" byreference="false" type="{unknown}"/>
+    <parameter name="ends" byreference="false" type="{unknown}"/>
+    <parameter name="val" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="le_and_le" start="154" end="157" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$begin"/>
+      <param type="mixed" variable="$ends"/>
+      <param type="mixed" variable="$val"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="begin" byreference="false" type="{unknown}"/>
+    <parameter name="ends" byreference="false" type="{unknown}"/>
+    <parameter name="val" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="gt_and_gt" start="165" end="168" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$begin"/>
+      <param type="mixed" variable="$ends"/>
+      <param type="mixed" variable="$val"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="begin" byreference="false" type="{unknown}"/>
+    <parameter name="ends" byreference="false" type="{unknown}"/>
+    <parameter name="val" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="ge_and_gt" start="176" end="179" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$begin"/>
+      <param type="mixed" variable="$ends"/>
+      <param type="mixed" variable="$val"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="begin" byreference="false" type="{unknown}"/>
+    <parameter name="ends" byreference="false" type="{unknown}"/>
+    <parameter name="val" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="gt_and_ge" start="187" end="190" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$begin"/>
+      <param type="mixed" variable="$ends"/>
+      <param type="mixed" variable="$val"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="begin" byreference="false" type="{unknown}"/>
+    <parameter name="ends" byreference="false" type="{unknown}"/>
+    <parameter name="val" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="ge_and_ge" start="198" end="201" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$begin"/>
+      <param type="mixed" variable="$ends"/>
+      <param type="mixed" variable="$val"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="begin" byreference="false" type="{unknown}"/>
+    <parameter name="ends" byreference="false" type="{unknown}"/>
+    <parameter name="val" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="negation" start="209" end="209" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <return type="object">
+        <type full="Teto\Functools\int|float" namespace="Teto\Functools" name="int|float"/>
+      </return>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addition" start="216" end="216" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <param type="mixed" variable="$b"/>
+      <return type="object">
+        <type full="Teto\Functools\int|float" namespace="Teto\Functools" name="int|float"/>
+      </return>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="subtraction" start="223" end="223" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <param type="mixed" variable="$b"/>
+      <return type="object">
+        <type full="Teto\Functools\int|float" namespace="Teto\Functools" name="int|float"/>
+      </return>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="multiplication" start="230" end="230" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <param type="mixed" variable="$b"/>
+      <return type="object">
+        <type full="Teto\Functools\int|float" namespace="Teto\Functools" name="int|float"/>
+      </return>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="division" start="237" end="237" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <param type="mixed" variable="$b"/>
+      <return type="object">
+        <type full="Teto\Functools\int|float" namespace="Teto\Functools" name="int|float"/>
+      </return>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="modulus" start="244" end="244" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <param type="mixed" variable="$b"/>
+      <return type="object">
+        <type full="Teto\Functools\int|float" namespace="Teto\Functools" name="int|float"/>
+      </return>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="exponentiation" start="251" end="251" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <param type="mixed" variable="$b"/>
+      <return type="object">
+        <type full="Teto\Functools\int|float" namespace="Teto\Functools" name="int|float"/>
+      </return>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="bit_and" start="260" end="260" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="int" variable="$a"/>
+      <param type="int" variable="$b"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="bit_or" start="267" end="267" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="int" variable="$a"/>
+      <param type="int" variable="$b"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="bit_xor" start="274" end="274" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="int" variable="$a"/>
+      <param type="int" variable="$b"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="bit_not" start="280" end="280" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="int" variable="$a"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="bit_shift_left" start="286" end="286" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="int" variable="$a"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="bit_shift_right" start="292" end="292" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="int" variable="$a"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="logical_and" start="301" end="301" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <param type="mixed" variable="$b"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="logical_or" start="308" end="308" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <param type="mixed" variable="$b"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="logical_xor" start="315" end="315" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <param type="mixed" variable="$b"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="logical_not" start="321" end="321" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="conditional" start="331" end="331" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$cond"/>
+      <param type="mixed" variable="$then"/>
+      <param type="mixed" variable="$else"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="cond" byreference="false" type="{unknown}"/>
+    <parameter name="then" byreference="false" type="{unknown}"/>
+    <parameter name="else" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="conditional_lazy" start="341" end="344" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$cond">
+        <type full="Teto\Functools\callable" namespace="Teto\Functools" name="callable"/>
+      </param>
+      <param type="object" variable="$then">
+        <type full="Teto\Functools\callable" namespace="Teto\Functools" name="callable"/>
+      </param>
+      <param type="object" variable="$else">
+        <type full="Teto\Functools\callable" namespace="Teto\Functools" name="callable"/>
+      </param>
+      <return type="mixed"/>
+      <link value="http://en.wikipedia.org/wiki/Thunk This technique is known as `thunk'."/>
+    </docblock>
+    <parameter name="cond" byreference="false" type="{unknown}"/>
+    <parameter name="then" byreference="false" type="{unknown}"/>
+    <parameter name="else" byreference="false" type="{unknown}"/>
+    <parameter name="v" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="elvis" start="351" end="351" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <param type="mixed" variable="$b"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="concatenation" start="360" end="360" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <param type="mixed" variable="$b"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_instanceof" start="369" end="369" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <param type="string" variable="$b"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="method" start="378" end="381" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$method"/>
+      <param type="mixed" variable="$receiver"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="receiver" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="make_array_double" start="388" end="391" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <param type="mixed" variable="$b"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="make_array_triple" start="399" end="402" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <param type="mixed" variable="$b"/>
+      <param type="mixed" variable="$c"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+    <parameter name="c" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="construct_echo" start="409" end="409" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="construct_print" start="415" end="415" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="construct_isset" start="424" end="437" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$operand"/>
+      <param type="mixed" variable="$idx"/>
+      <param description="&quot;[]&quot;|&quot;-&gt;&quot;" type="string" variable="$access"/>
+      <return type="boolean"/>
+      <note value="This function does not use default argument."/>
+    </docblock>
+    <parameter name="operand" byreference="false" type="{unknown}"/>
+    <parameter name="idx" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="access" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="construct_empty" start="446" end="459" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$operand"/>
+      <param type="mixed" variable="$idx"/>
+      <param description="&quot;[]&quot;|&quot;-&gt;&quot;" type="string" variable="$access"/>
+      <return type="boolean"/>
+      <note value="This function does not use default argument."/>
+    </docblock>
+    <parameter name="operand" byreference="false" type="{unknown}"/>
+    <parameter name="idx" byreference="false" type="{unknown}" default="null"/>
+    <parameter name="access" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="construct_require" start="465" end="465" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="construct_include" start="471" end="471" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="construct_require_once" start="477" end="477" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="construct_include_once" start="483" end="483" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="construct_eval" start="489" end="489" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$a"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="construct_array" start="495" end="508" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param description="..." type="mixed" variable="$item"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="item" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="construct_exit" start="513" end="513" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object">
+        <type full="Teto\Functools\int|string" namespace="Teto\Functools" name="int|string"/>
+      </param>
+    </docblock>
+    <parameter name="status" byreference="false" type="integer" default="0"/>
+  </method>
+  <method name="construct_die" start="518" end="518" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object">
+        <type full="Teto\Functools\int|string" namespace="Teto\Functools" name="int|string"/>
+      </param>
+    </docblock>
+    <parameter name="status" byreference="false" type="integer" default="1"/>
+  </method>
+  <method name="index_get" start="527" end="530" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$idx"/>
+      <param type="mixed" variable="$a"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="idx" byreference="false" type="{unknown}"/>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="index_assign" start="538" end="543" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$idx"/>
+      <param type="mixed" variable="$a"/>
+      <param type="mixed" variable="$v"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="idx" byreference="false" type="{unknown}"/>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="v" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="index_isset" start="550" end="553" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$idx"/>
+      <param type="mixed" variable="$a"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="idx" byreference="false" type="{unknown}"/>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="index_unset" start="560" end="565" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$idx"/>
+      <param type="mixed" variable="$a"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="idx" byreference="false" type="{unknown}"/>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="property_get" start="574" end="577" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$idx"/>
+      <param type="mixed" variable="$a"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="idx" byreference="false" type="{unknown}"/>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="property_assign" start="585" end="590" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$idx"/>
+      <param type="mixed" variable="$a"/>
+      <param type="mixed" variable="$v"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="idx" byreference="false" type="{unknown}"/>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="v" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="property_isset" start="597" end="600" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$idx"/>
+      <param type="mixed" variable="$a"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="idx" byreference="false" type="{unknown}"/>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="property_unset" start="607" end="612" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$idx"/>
+      <param type="mixed" variable="$a"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="idx" byreference="false" type="{unknown}"/>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="sort" start="616" end="621" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="array" byreference="false" type="{unknown}"/>
+    <parameter name="sort_flags" byreference="false" type="{unknown}" default="SORT_REGULAR"/>
+  </method>
+  <method name="rsort" start="623" end="628" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="array" byreference="false" type="{unknown}"/>
+    <parameter name="sort_flags" byreference="false" type="{unknown}" default="SORT_REGULAR"/>
+  </method>
+  <method name="asort" start="630" end="635" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="array" byreference="false" type="{unknown}"/>
+    <parameter name="sort_flags" byreference="false" type="{unknown}" default="SORT_REGULAR"/>
+  </method>
+  <method name="arsort" start="637" end="642" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="array" byreference="false" type="{unknown}"/>
+    <parameter name="sort_flags" byreference="false" type="{unknown}" default="SORT_REGULAR"/>
+  </method>
+  <method name="ksort" start="644" end="649" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="array" byreference="false" type="{unknown}"/>
+    <parameter name="sort_flags" byreference="false" type="{unknown}" default="SORT_REGULAR"/>
+  </method>
+  <method name="krsort" start="651" end="656" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="array" byreference="false" type="{unknown}"/>
+    <parameter name="sort_flags" byreference="false" type="{unknown}" default="SORT_REGULAR"/>
+  </method>
+  <method name="usort" start="658" end="663" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="array" byreference="false" type="{unknown}"/>
+    <parameter name="value_compare_func" byreference="false" type="object">
+      <type full="Teto\Functools\callable" namespace="Teto\Functools" name="callable"/>
+    </parameter>
+  </method>
+  <method name="uasort" start="665" end="670" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="array" byreference="false" type="{unknown}"/>
+    <parameter name="value_compare_func" byreference="false" type="object">
+      <type full="Teto\Functools\callable" namespace="Teto\Functools" name="callable"/>
+    </parameter>
+  </method>
+  <method name="uksort" start="672" end="677" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="array" byreference="false" type="{unknown}"/>
+    <parameter name="key_compare_func" byreference="false" type="object">
+      <type full="Teto\Functools\callable" namespace="Teto\Functools" name="callable"/>
+    </parameter>
+  </method>
+  <method name="natsort" start="679" end="684" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="array" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="natcasesort" start="686" end="691" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="array" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="tup_to_kv" start="701" end="707" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$acc"/>
+      <param type="array" variable="$tup"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="acc" byreference="false" type="{unknown}"/>
+    <parameter name="tup" byreference="false" type="array"/>
+  </method>
+  <method name="arity" start="711" end="714" abstract="false" final="false" static="true" visibility="public"/>
+  <method name="curry" start="716" end="719" abstract="false" final="false" static="true" visibility="public"/>
+  <method name="compose" start="721" end="724" abstract="false" final="false" static="true" visibility="public"/>
+  <method name="cons" start="726" end="729" abstract="false" final="false" static="true" visibility="public"/>
+  <method name="tuple" start="731" end="734" abstract="false" final="false" static="true" visibility="public"/>
+  <method name="fix" start="736" end="739" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="f" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="s" start="743" end="743" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="S combinator"/>
+    </docblock>
+    <parameter name="f" byreference="false" type="{unknown}"/>
+    <parameter name="g" byreference="false" type="{unknown}"/>
+    <parameter name="x" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="k" start="746" end="746" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="K combinator"/>
+    </docblock>
+    <parameter name="x" byreference="false" type="{unknown}"/>
+    <parameter name="y" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="i" start="749" end="756" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="I combinator"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="initOperators" start="758" end="911" abstract="false" final="false" static="true" visibility="private"/>
+</class>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Teto\Functools" namespace="Teto" name="Functools" abstract="false" final="true" start="12" end="166">
+  <file path="/Users/megurine/repo/php/php-functools/src" file="Functools.php" realpath="/Users/megurine/repo/php/php-functools/src/Functools.php" size="4473" time="2015-01-27T00:22:32+09:00" unixtime="1422285752" sha1="fe8e46d3f3b9320d1fbae5b0ba30c48118631323" relative="Functools.php"/>
+  <docblock>
+    <description compact="Functional toolbox"/>
+    <package value="Teto"/>
+    <author value="USAMI Kenta &lt;tadsan@zonu.me&gt;"/>
+    <copyright value="2015 USAMI Kenta"/>
+    <license name="http://www.apache.org/licenses/LICENSE-2.0"/>
+  </docblock>
+  <constructor name="__construct" start="14" end="14" abstract="false" final="false" static="false" visibility="private"/>
+  <method name="partial" start="24" end="27" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Partial application"/>
+      <param type="object" variable="$callback">
+        <type full="Teto\callable" namespace="Teto" name="callable"/>
+      </param>
+      <param type="array" variable="$arguments" of="object">
+        <type full="Teto\mixed" namespace="Teto" name="mixed"/>
+      </param>
+      <param type="int" variable="$pos"/>
+      <return type="object">
+        <type full="\Teto\Functools\PartialCallable" namespace="\Teto\Functools" name="PartialCallable"/>
+      </return>
+    </docblock>
+    <parameter name="callback" byreference="false" type="object">
+      <type full="Teto\callable" namespace="Teto" name="callable"/>
+    </parameter>
+    <parameter name="arguments" byreference="false" type="array"/>
+    <parameter name="pos" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="arity" start="35" end="48" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns an indication of the number of arguments accepted by a callable."/>
+      <param type="object" variable="$callback">
+        <type full="Teto\callable" namespace="Teto" name="callable"/>
+      </param>
+      <return type="int"/>
+    </docblock>
+    <parameter name="callback" byreference="false" type="object">
+      <type full="Teto\callable" namespace="Teto" name="callable"/>
+    </parameter>
+  </method>
+  <method name="curry" start="56" end="59" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Make curried callable object"/>
+      <param type="object" variable="$callback">
+        <type full="Teto\callable" namespace="Teto" name="callable"/>
+      </param>
+      <return type="object">
+        <type full="\Teto\Functools\CurriedCallable" namespace="\Teto\Functools" name="CurriedCallable"/>
+      </return>
+    </docblock>
+    <parameter name="callback" byreference="false" type="object">
+      <type full="Teto\callable" namespace="Teto" name="callable"/>
+    </parameter>
+  </method>
+  <method name="apply" start="68" end="73" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Call function of Functools\Operator"/>
+      <param type="string" variable="$symbol"/>
+      <param type="array" variable="$arguments" of="object">
+        <type full="Teto\mixed" namespace="Teto" name="mixed"/>
+      </param>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="symbol" byreference="false" type="{unknown}"/>
+    <parameter name="arguments" byreference="false" type="array"/>
+  </method>
+  <method name="op" start="84" end="89" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Get callable object from Functools\Operator (and partial application)"/>
+      <param type="string" variable="$symbol"/>
+      <param type="array" variable="$arguments" of="object">
+        <type full="Teto\mixed" namespace="Teto" name="mixed"/>
+      </param>
+      <param type="int" variable="$pos"/>
+      <return type="object">
+        <type full="Teto\callable" namespace="Teto" name="callable"/>
+      </return>
+      <see value="\Teto\Functools\Operator::op()"/>
+    </docblock>
+    <parameter name="symbol" byreference="false" type="{unknown}"/>
+    <parameter name="arguments" byreference="false" type="array"/>
+    <parameter name="pos" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="compose" start="98" end="110" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Compose functions"/>
+      <param type="object" variable="$f">
+        <type full="Teto\callable" namespace="Teto" name="callable"/>
+      </param>
+      <param description="..." type="object" variable="$g">
+        <type full="Teto\callable" namespace="Teto" name="callable"/>
+      </param>
+      <return type="object">
+        <type full="Teto\callable" namespace="Teto" name="callable"/>
+      </return>
+    </docblock>
+    <parameter name="f" byreference="false" type="object">
+      <type full="Teto\callable" namespace="Teto" name="callable"/>
+    </parameter>
+    <parameter name="g" byreference="false" type="object">
+      <type full="Teto\callable" namespace="Teto" name="callable"/>
+    </parameter>
+  </method>
+  <method name="cons" start="119" end="122" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Make new cons cell"/>
+      <param type="mixed" variable="$car"/>
+      <param type="mixed" variable="$cdr"/>
+      <return type="object">
+        <type full="\Teto\Functools\DataStructure\Cons" namespace="\Teto\Functools\DataStructure" name="Cons"/>
+      </return>
+    </docblock>
+    <parameter name="car" byreference="false" type="{unknown}"/>
+    <parameter name="cdr" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="tuple" start="130" end="139" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Make n-tuple"/>
+      <param description="..." type="mixed" variable="$item"/>
+      <return type="object">
+        <type full="\Teto\Functools\DataStructure\Cons" namespace="\Teto\Functools\DataStructure" name="Cons"/>
+      </return>
+    </docblock>
+    <parameter name="item" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="fix" start="147" end="165" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Fixed point operator (Z combinator)"/>
+      <param type="object" variable="$f">
+        <type full="Teto\callable" namespace="Teto" name="callable"/>
+      </param>
+      <return type="object">
+        <type full="Teto\callable" namespace="Teto" name="callable"/>
+      </return>
+    </docblock>
+    <parameter name="f" byreference="false" type="object">
+      <type full="Teto\callable" namespace="Teto" name="callable"/>
+    </parameter>
+  </method>
+</class>

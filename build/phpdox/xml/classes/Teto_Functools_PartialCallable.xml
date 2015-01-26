@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Teto\Functools\PartialCallable" namespace="Teto\Functools" name="PartialCallable" abstract="false" final="true" start="13" end="70">
+  <file path="/Users/megurine/repo/php/php-functools/src/Functools" file="PartialCallable.php" realpath="/Users/megurine/repo/php/php-functools/src/Functools/PartialCallable.php" size="1795" time="2015-01-26T01:19:00+09:00" unixtime="1422202740" sha1="3526a0349f2797ffbcd87cfbc81cd476ddd312fc" relative="Functools/PartialCallable.php"/>
+  <docblock>
+    <description compact="array_map compatible partial application wrapper"/>
+    <package value="Teto"/>
+    <subpackage value="Functools"/>
+    <author value="USAMI Kenta &lt;tadsan@zonu.me&gt;"/>
+    <copyright value="2015 USAMI Kenta"/>
+    <license name="http://www.apache.org/licenses/LICENSE-2.0"/>
+  </docblock>
+  <member name="callback" type="{unknown}" visibility="private" line="16">
+    <docblock>
+      <var type="object">
+        <type full="Teto\Functools\callable" namespace="Teto\Functools" name="callable"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="arguments" type="{unknown}" visibility="private" line="18">
+    <docblock>
+      <var type="array" of="object">
+        <type full="Teto\Functools\mixed" namespace="Teto\Functools" name="mixed"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="pos" type="{unknown}" visibility="private" line="20">
+    <docblock>
+      <var type="object">
+        <type full="Teto\Functools\int|null" namespace="Teto\Functools" name="int|null"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="27" end="32" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$callback">
+        <type full="Teto\Functools\callable" namespace="Teto\Functools" name="callable"/>
+      </param>
+      <param type="array" variable="$arguments" of="object">
+        <type full="Teto\Functools\mixed" namespace="Teto\Functools" name="mixed"/>
+      </param>
+      <param type="int" variable="null"/>
+    </docblock>
+    <parameter name="callback" byreference="false" type="object">
+      <type full="Teto\Functools\callable" namespace="Teto\Functools" name="callable"/>
+    </parameter>
+    <parameter name="arguments" byreference="false" type="array"/>
+    <parameter name="pos" byreference="false" type="{unknown}" default="null"/>
+  </constructor>
+  <method name="__invoke" start="38" end="41" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="..." type="mixed" variable="$arg"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="arg" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="partial" start="50" end="53" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Make partially applied function"/>
+      <param type="array" variable="$arguments" of="object">
+        <type full="Teto\Functools\mixed" namespace="Teto\Functools" name="mixed"/>
+      </param>
+      <param type="int" variable="null"/>
+      <return description="Returns new instance" type="object">
+        <type full="Teto\Functools\PartialCallable" namespace="Teto\Functools" name="PartialCallable"/>
+      </return>
+    </docblock>
+    <parameter name="arguments" byreference="false" type="array"/>
+    <parameter name="pos" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="arguments" start="55" end="69" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="additional_arguments" byreference="false" type="array"/>
+  </method>
+</class>

@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Teto\Functools\Operator</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.html">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html#Teto_Functools">Teto\Functools</a>
+          </li>
+          <li class="separator">Operator</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+          <li>
+            <a href="../source/Functools/Operator.php.xhtml#line14">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Teto\Functools\</small>Operator</h1>
+        <h4>Object an abstraction of the operator expression</h4>
+        <p/>
+        <ul>
+          <li>Author: USAMI Kenta &lt;tadsan@zonu.me&gt;</li>
+          <li>Copyright: 2015 USAMI Kenta</li>
+          <li>License: http://www.apache.org/licenses/LICENSE-2.0</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Operator
+            {<br/><ul class="none"><li>// members</li><li>private <span title="Teto\Functools\Operator">Operator</span> <a href="#members">$singleton</a>;
+                    </li><li>private array <a href="#members">$operators</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>private void <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/__construct.html">__construct</a>()
+                    </li><li>private static Operator <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/getInstance.html">getInstance</a>()
+                    </li><li>public static callable <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/op.html">op</a>()
+                    </li><li>public static mixed <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/id.html">id</a>()
+                    </li><li>public static boolean <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/equal.html">equal</a>()
+                    </li><li>public static boolean <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/identical.html">identical</a>()
+                    </li><li>public static boolean <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/not_equal.html">not_equal</a>()
+                    </li><li>public static boolean <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/not_identical.html">not_identical</a>()
+                    </li><li>public static boolean <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/less_than.html">less_than</a>()
+                    </li><li>public static boolean <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/greater_than.html">greater_than</a>()
+                    </li><li>public static boolean <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/less_than_or_equal_to.html">less_than_or_equal_to</a>()
+                    </li><li>public static boolean <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/greater_than_or_equal_to.html">greater_than_or_equal_to</a>()
+                    </li><li>public static boolean <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/lt_and_lt.html">lt_and_lt</a>()
+                    </li><li>public static boolean <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/le_and_lt.html">le_and_lt</a>()
+                    </li><li>public static boolean <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/lt_and_le.html">lt_and_le</a>()
+                    </li><li>public static boolean <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/le_and_le.html">le_and_le</a>()
+                    </li><li>public static boolean <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/gt_and_gt.html">gt_and_gt</a>()
+                    </li><li>public static boolean <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/ge_and_gt.html">ge_and_gt</a>()
+                    </li><li>public static boolean <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/gt_and_ge.html">gt_and_ge</a>()
+                    </li><li>public static boolean <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/ge_and_ge.html">ge_and_ge</a>()
+                    </li><li>public static int|float <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/negation.html">negation</a>()
+                    </li><li>public static int|float <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/addition.html">addition</a>()
+                    </li><li>public static int|float <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/subtraction.html">subtraction</a>()
+                    </li><li>public static int|float <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/multiplication.html">multiplication</a>()
+                    </li><li>public static int|float <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/division.html">division</a>()
+                    </li><li>public static int|float <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/modulus.html">modulus</a>()
+                    </li><li>public static int|float <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/exponentiation.html">exponentiation</a>()
+                    </li><li>public static int <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/bit_and.html">bit_and</a>()
+                    </li><li>public static int <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/bit_or.html">bit_or</a>()
+                    </li><li>public static int <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/bit_xor.html">bit_xor</a>()
+                    </li><li>public static int <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/bit_not.html">bit_not</a>()
+                    </li><li>public static int <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/bit_shift_left.html">bit_shift_left</a>()
+                    </li><li>public static int <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/bit_shift_right.html">bit_shift_right</a>()
+                    </li><li>public static boolean <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/logical_and.html">logical_and</a>()
+                    </li><li>public static boolean <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/logical_or.html">logical_or</a>()
+                    </li><li>public static boolean <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/logical_xor.html">logical_xor</a>()
+                    </li><li>public static boolean <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/logical_not.html">logical_not</a>()
+                    </li><li>public static mixed <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/conditional.html">conditional</a>()
+                    </li><li>public static mixed <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/conditional_lazy.html">conditional_lazy</a>()
+                    </li><li>public static mixed <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/elvis.html">elvis</a>()
+                    </li><li>public static string <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/concatenation.html">concatenation</a>()
+                    </li><li>public static boolean <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/_instanceof.html">_instanceof</a>()
+                    </li><li>public static array <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/method.html">method</a>()
+                    </li><li>public static array <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/make_array_double.html">make_array_double</a>()
+                    </li><li>public static array <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/make_array_triple.html">make_array_triple</a>()
+                    </li><li>public static void <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/construct_echo.html">construct_echo</a>()
+                    </li><li>public static int <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/construct_print.html">construct_print</a>()
+                    </li><li>public static boolean <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/construct_isset.html">construct_isset</a>()
+                    </li><li>public static boolean <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/construct_empty.html">construct_empty</a>()
+                    </li><li>public static mixed <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/construct_require.html">construct_require</a>()
+                    </li><li>public static mixed <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/construct_include.html">construct_include</a>()
+                    </li><li>public static mixed <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/construct_require_once.html">construct_require_once</a>()
+                    </li><li>public static mixed <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/construct_include_once.html">construct_include_once</a>()
+                    </li><li>public static mixed <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/construct_eval.html">construct_eval</a>()
+                    </li><li>public static array <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/construct_array.html">construct_array</a>()
+                    </li><li>public static void <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/construct_exit.html">construct_exit</a>()
+                    </li><li>public static void <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/construct_die.html">construct_die</a>()
+                    </li><li>public static mixed <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/index_get.html">index_get</a>()
+                    </li><li>public static mixed <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/index_assign.html">index_assign</a>()
+                    </li><li>public static boolean <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/index_isset.html">index_isset</a>()
+                    </li><li>public static mixed <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/index_unset.html">index_unset</a>()
+                    </li><li>public static mixed <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/property_get.html">property_get</a>()
+                    </li><li>public static mixed <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/property_assign.html">property_assign</a>()
+                    </li><li>public static boolean <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/property_isset.html">property_isset</a>()
+                    </li><li>public static mixed <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/property_unset.html">property_unset</a>()
+                    </li><li>public static void <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/sort.html">sort</a>()
+                    </li><li>public static void <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/rsort.html">rsort</a>()
+                    </li><li>public static void <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/asort.html">asort</a>()
+                    </li><li>public static void <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/arsort.html">arsort</a>()
+                    </li><li>public static void <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/ksort.html">ksort</a>()
+                    </li><li>public static void <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/krsort.html">krsort</a>()
+                    </li><li>public static void <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/usort.html">usort</a>()
+                    </li><li>public static void <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/uasort.html">uasort</a>()
+                    </li><li>public static void <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/uksort.html">uksort</a>()
+                    </li><li>public static void <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/natsort.html">natsort</a>()
+                    </li><li>public static void <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/natcasesort.html">natcasesort</a>()
+                    </li><li>public static array <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/tup_to_kv.html">tup_to_kv</a>()
+                    </li><li>public static void <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/arity.html">arity</a>()
+                    </li><li>public static void <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/curry.html">curry</a>()
+                    </li><li>public static void <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/compose.html">compose</a>()
+                    </li><li>public static void <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/cons.html">cons</a>()
+                    </li><li>public static void <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/tuple.html">tuple</a>()
+                    </li><li>public static void <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/fix.html">fix</a>()
+                    </li><li>public static void <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/s.html">s</a>()
+                    </li><li>public static void <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/k.html">k</a>()
+                    </li><li>public static void <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/i.html">i</a>()
+                    </li><li>private static void <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/initOperators.html">initOperators</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="operators"><strong>$operators</strong>
+                —
+                array</li>
+            <li id="singleton"><strong>$singleton</strong>
+                —
+                <a href="#">Teto\Functools\Operator</a></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="__construct">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/__construct.html">__construct()</a>
+            </li>
+            <li id="getInstance">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/getInstance.html">getInstance()</a>
+            </li>
+            <li id="initOperators">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/initOperators.html">initOperators()</a>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="_instanceof">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/_instanceof.html">_instanceof()</a>
+            </li>
+            <li id="addition">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/addition.html">addition()</a>
+            </li>
+            <li id="arity">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/arity.html">arity()</a>
+            </li>
+            <li id="arsort">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/arsort.html">arsort()</a>
+            </li>
+            <li id="asort">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/asort.html">asort()</a>
+            </li>
+            <li id="bit_and">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/bit_and.html">bit_and()</a>
+            </li>
+            <li id="bit_not">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/bit_not.html">bit_not()</a>
+            </li>
+            <li id="bit_or">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/bit_or.html">bit_or()</a>
+            </li>
+            <li id="bit_shift_left">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/bit_shift_left.html">bit_shift_left()</a>
+            </li>
+            <li id="bit_shift_right">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/bit_shift_right.html">bit_shift_right()</a>
+            </li>
+            <li id="bit_xor">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/bit_xor.html">bit_xor()</a>
+            </li>
+            <li id="compose">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/compose.html">compose()</a>
+            </li>
+            <li id="concatenation">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/concatenation.html">concatenation()</a>
+            </li>
+            <li id="conditional">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/conditional.html">conditional()</a>
+            </li>
+            <li id="conditional_lazy">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/conditional_lazy.html">conditional_lazy()</a>
+            </li>
+            <li id="cons">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/cons.html">cons()</a>
+            </li>
+            <li id="construct_array">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/construct_array.html">construct_array()</a>
+            </li>
+            <li id="construct_die">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/construct_die.html">construct_die()</a>
+            </li>
+            <li id="construct_echo">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/construct_echo.html">construct_echo()</a>
+            </li>
+            <li id="construct_empty">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/construct_empty.html">construct_empty()</a>
+            </li>
+            <li id="construct_eval">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/construct_eval.html">construct_eval()</a>
+            </li>
+            <li id="construct_exit">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/construct_exit.html">construct_exit()</a>
+            </li>
+            <li id="construct_include">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/construct_include.html">construct_include()</a>
+            </li>
+            <li id="construct_include_once">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/construct_include_once.html">construct_include_once()</a>
+            </li>
+            <li id="construct_isset">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/construct_isset.html">construct_isset()</a>
+            </li>
+            <li id="construct_print">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/construct_print.html">construct_print()</a>
+            </li>
+            <li id="construct_require">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/construct_require.html">construct_require()</a>
+            </li>
+            <li id="construct_require_once">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/construct_require_once.html">construct_require_once()</a>
+            </li>
+            <li id="curry">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/curry.html">curry()</a>
+            </li>
+            <li id="division">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/division.html">division()</a>
+            </li>
+            <li id="elvis">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/elvis.html">elvis()</a>
+            </li>
+            <li id="equal">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/equal.html">equal()</a>
+            </li>
+            <li id="exponentiation">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/exponentiation.html">exponentiation()</a>
+            </li>
+            <li id="fix">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/fix.html">fix()</a>
+            </li>
+            <li id="ge_and_ge">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/ge_and_ge.html">ge_and_ge()</a>
+            </li>
+            <li id="ge_and_gt">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/ge_and_gt.html">ge_and_gt()</a>
+            </li>
+            <li id="greater_than">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/greater_than.html">greater_than()</a>
+            </li>
+            <li id="greater_than_or_equal_to">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/greater_than_or_equal_to.html">greater_than_or_equal_to()</a>
+            </li>
+            <li id="gt_and_ge">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/gt_and_ge.html">gt_and_ge()</a>
+            </li>
+            <li id="gt_and_gt">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/gt_and_gt.html">gt_and_gt()</a>
+            </li>
+            <li id="i"><a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/i.html">i()</a>
+                — I combinator</li>
+            <li id="id">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/id.html">id()</a>
+            </li>
+            <li id="identical">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/identical.html">identical()</a>
+            </li>
+            <li id="index_assign">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/index_assign.html">index_assign()</a>
+            </li>
+            <li id="index_get">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/index_get.html">index_get()</a>
+            </li>
+            <li id="index_isset">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/index_isset.html">index_isset()</a>
+            </li>
+            <li id="index_unset">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/index_unset.html">index_unset()</a>
+            </li>
+            <li id="k"><a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/k.html">k()</a>
+                — K combinator</li>
+            <li id="krsort">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/krsort.html">krsort()</a>
+            </li>
+            <li id="ksort">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/ksort.html">ksort()</a>
+            </li>
+            <li id="le_and_le">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/le_and_le.html">le_and_le()</a>
+            </li>
+            <li id="le_and_lt">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/le_and_lt.html">le_and_lt()</a>
+            </li>
+            <li id="less_than">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/less_than.html">less_than()</a>
+            </li>
+            <li id="less_than_or_equal_to">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/less_than_or_equal_to.html">less_than_or_equal_to()</a>
+            </li>
+            <li id="logical_and">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/logical_and.html">logical_and()</a>
+            </li>
+            <li id="logical_not">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/logical_not.html">logical_not()</a>
+            </li>
+            <li id="logical_or">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/logical_or.html">logical_or()</a>
+            </li>
+            <li id="logical_xor">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/logical_xor.html">logical_xor()</a>
+            </li>
+            <li id="lt_and_le">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/lt_and_le.html">lt_and_le()</a>
+            </li>
+            <li id="lt_and_lt">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/lt_and_lt.html">lt_and_lt()</a>
+            </li>
+            <li id="make_array_double">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/make_array_double.html">make_array_double()</a>
+            </li>
+            <li id="make_array_triple">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/make_array_triple.html">make_array_triple()</a>
+            </li>
+            <li id="method">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/method.html">method()</a>
+            </li>
+            <li id="modulus">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/modulus.html">modulus()</a>
+            </li>
+            <li id="multiplication">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/multiplication.html">multiplication()</a>
+            </li>
+            <li id="natcasesort">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/natcasesort.html">natcasesort()</a>
+            </li>
+            <li id="natsort">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/natsort.html">natsort()</a>
+            </li>
+            <li id="negation">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/negation.html">negation()</a>
+            </li>
+            <li id="not_equal">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/not_equal.html">not_equal()</a>
+            </li>
+            <li id="not_identical">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/not_identical.html">not_identical()</a>
+            </li>
+            <li id="op">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/op.html">op()</a>
+            </li>
+            <li id="property_assign">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/property_assign.html">property_assign()</a>
+            </li>
+            <li id="property_get">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/property_get.html">property_get()</a>
+            </li>
+            <li id="property_isset">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/property_isset.html">property_isset()</a>
+            </li>
+            <li id="property_unset">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/property_unset.html">property_unset()</a>
+            </li>
+            <li id="rsort">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/rsort.html">rsort()</a>
+            </li>
+            <li id="s"><a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/s.html">s()</a>
+                — S combinator</li>
+            <li id="sort">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/sort.html">sort()</a>
+            </li>
+            <li id="subtraction">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/subtraction.html">subtraction()</a>
+            </li>
+            <li id="tup_to_kv">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/tup_to_kv.html">tup_to_kv()</a>
+            </li>
+            <li id="tuple">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/tuple.html">tuple()</a>
+            </li>
+            <li id="uasort">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/uasort.html">uasort()</a>
+            </li>
+            <li id="uksort">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/uksort.html">uksort()</a>
+            </li>
+            <li id="usort">
+              <a title="Teto\Functools\Operator" href="../classes/Teto_Functools_Operator/usort.html">usort()</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul class="styled history">
+          <li>
+            <h3>2015-01-27T00:22:57+09:00 (commit #<span title="a5e5bba63e22a15b5c192222c35615b526d02414">a5e5bba</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Fix (including the specification change)</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-26T03:27:01+09:00 (commit #<span title="91216e873e2726b09608aee335a3184f892f214f">91216e8</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Add Language-construct wrappers</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-26T01:18:25+09:00 (commit #<span title="8a4030f9399fcad5fb42cdbff649336bb2cd9415">8a4030f</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Fixes</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-24T19:41:45+09:00 (commit #<span title="aacee98ba3b7d2096cc2fb0d070b0d8b4890fcf2">aacee98</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Normalize symbol (trim space around '@')</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-24T19:34:37+09:00 (commit #<span title="7762ce78c8703a67846d5f146b30b7922198fc63">7762ce7</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Impl range operators</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-24T18:06:28+09:00 (commit #<span title="bf1127f6a262dffc9c951d73e724582e3500200f">bf1127f</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Add Sort function wrappers</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-24T16:39:53+09:00 (commit #<span title="0c5b10b8a062b31863c2d102c2f4ea1d475261fe">0c5b10b</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Add Functools::cons()</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-24T16:33:43+09:00 (commit #<span title="711e8f329d503021b2980603ad9a4cf57179e9d4">711e8f3</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Add Operator construct_isset, construct_empty</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-24T13:42:35+09:00 (commit #<span title="1e3f635ec294d6571b58c6e0cb76dae92e46f857">1e3f635</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Add property access operators</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-24T12:35:30+09:00 (commit #<span title="baa36821a33c046cfd64a9c161229edd7592fe48">baa3682</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Fix class name in phpdoc (I forgot to change it...)</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-24T03:51:36+09:00 (commit #<span title="01812d1f9686e929d4586ed0d6aa1600d2d58f5c">01812d1</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Add tup_to_kv</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-24T03:23:55+09:00 (commit #<span title="f5611ee0dc1de47c6ced31d9e2c937c4ea954e31">f5611ee</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Add []= operator</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-24T00:11:38+09:00 (commit #<span title="f109103587249f545253f3a4a511d3be05215178">f109103</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Add Operator</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-24T00:10:42+09:00 (commit #<span title="7ffc448fa44fc029d8f285b149da5e4f4aac75e4">7ffc448</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Add JoinTest with Underbar.php
+
+Underbar.php https://github.com/emonkak/underbar.php</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-23T22:59:03+09:00 (commit #<span title="73f5fbb0a7079797d7c4438b1c457d70fdd3a0d9">73f5fbb</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Move Operator::fix() -&gt; Functools::fix()</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-23T22:26:55+09:00 (commit #<span title="3c002cf6986f1108aff8d965dbb0b03bc084ece1">3c002cf</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Impl Operator::fix() = Z combinator</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-23T10:25:17+09:00 (commit #<span title="57bfdd5a6670da2d1c751e4b834733266b4d946d">57bfdd5</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Update Functools</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-23T01:43:50+09:00 (commit #<span title="86b4f116e129482313455ced2e942ac3d381dbae">86b4f11</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Fix Functools::op() and Add operators</pre>
+            </div>
+          </li>
+          <li>
+            <h3>2015-01-22T21:16:41+09:00 (commit #<span title="31dea68ebeef952877ab114cec332922df393af1">31dea68</span>)</h3>
+            <div>
+              <p>
+                        Author: USAMI Kenta (tadsan@zonu.me) /
+                        Commiter: USAMI Kenta (tadsan@zonu.me)
+                    </p>
+              <pre class="wrapped">Add Functools\Operator</pre>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 161ef37-dirty - Copyright (C) 2010 - 2015 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

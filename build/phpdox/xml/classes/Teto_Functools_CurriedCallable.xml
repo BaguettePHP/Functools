@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Teto\Functools\CurriedCallable" namespace="Teto\Functools" name="CurriedCallable" abstract="false" final="true" start="14" end="41">
+  <file path="/Users/megurine/repo/php/php-functools/src/Functools" file="CurriedCallable.php" realpath="/Users/megurine/repo/php/php-functools/src/Functools/CurriedCallable.php" size="964" time="2015-01-22T22:33:29+09:00" unixtime="1421933609" sha1="80137d55ea97148f0840806dd1bab7059e48a4f8" relative="Functools/CurriedCallable.php"/>
+  <docblock>
+    <description compact="array_map compatible partial application wrapper"/>
+    <package value="Teto"/>
+    <subpackage value="Functools"/>
+    <author value="USAMI Kenta &lt;tadsan@zonu.me&gt;"/>
+    <copyright value="2015 USAMI Kenta"/>
+    <license name="http://www.apache.org/licenses/LICENSE-2.0"/>
+  </docblock>
+  <member name="callable" type="{unknown}" visibility="private" line="17">
+    <docblock>
+      <var type="object">
+        <type full="Teto\Functools\callable" namespace="Teto\Functools" name="callable"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="arity" type="{unknown}" visibility="private" line="19">
+    <docblock>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="arguments" type="{unknown}" visibility="private" line="21">
+    <docblock>
+      <var type="array" of="object">
+        <type full="Teto\Functools\mixed" namespace="Teto\Functools" name="mixed"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="23" end="28" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="callable" byreference="false" type="object">
+      <type full="Teto\Functools\callable" namespace="Teto\Functools" name="callable"/>
+    </parameter>
+    <parameter name="arity" byreference="false" type="{unknown}"/>
+    <parameter name="arguments" byreference="false" type="array"/>
+  </constructor>
+  <method name="__invoke" start="30" end="40" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="arg" byreference="false" type="{unknown}"/>
+  </method>
+</class>

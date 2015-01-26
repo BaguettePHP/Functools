@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<source xmlns="http://xml.phpdox.net/src">
+  <dir name="/Users/megurine/repo/php/php-functools/src">
+    <dir name="Functools">
+      <file name="CurriedCallable.php" size="964" time="2015-01-22T22:33:29+09:00" unixtime="1421933609" sha1="80137d55ea97148f0840806dd1bab7059e48a4f8" xml="tokens/Functools/CurriedCallable.php.xml"/>
+      <dir name="DataStructure">
+        <file name="Cons.php" size="2930" time="2015-01-26T21:59:07+09:00" unixtime="1422277147" sha1="8f604de0fae7144394220f48b54e578f39f05d25" xml="tokens/Functools/DataStructure/Cons.php.xml"/>
+      </dir>
+      <file name="Operator.php" size="22354" time="2015-01-26T23:59:54+09:00" unixtime="1422284394" sha1="52c59410b1e4ceee1890e4c487cf66bba3955880" xml="tokens/Functools/Operator.php.xml"/>
+      <file name="PartialCallable.php" size="1795" time="2015-01-26T01:19:00+09:00" unixtime="1422202740" sha1="3526a0349f2797ffbcd87cfbc81cd476ddd312fc" xml="tokens/Functools/PartialCallable.php.xml"/>
+    </dir>
+    <file name="Functools.php" size="4473" time="2015-01-27T00:22:32+09:00" unixtime="1422285752" sha1="fe8e46d3f3b9320d1fbae5b0ba30c48118631323" xml="tokens/Functools.php.xml"/>
+  </dir>
+</source>

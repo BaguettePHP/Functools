@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Teto\Functools\DataStructure\Cons" namespace="Teto\Functools\DataStructure" name="Cons" abstract="false" final="true" start="13" end="124">
+  <file path="/Users/megurine/repo/php/php-functools/src/Functools/DataStructure" file="Cons.php" realpath="/Users/megurine/repo/php/php-functools/src/Functools/DataStructure/Cons.php" size="2930" time="2015-01-26T21:59:07+09:00" unixtime="1422277147" sha1="8f604de0fae7144394220f48b54e578f39f05d25" relative="Functools/DataStructure/Cons.php"/>
+  <docblock>
+    <description compact="Cons cell"/>
+    <package value="Teto"/>
+    <subpackage value="Functools\DataStructure"/>
+    <author value="USAMI Kenta &lt;tadsan@zonu.me&gt;"/>
+    <copyright value="2015 USAMI Kenta"/>
+    <license name="http://www.apache.org/licenses/LICENSE-2.0"/>
+  </docblock>
+  <implements full="ArrayAccess" namespace="" name="ArrayAccess"/>
+  <implements full="Countable" namespace="" name="Countable"/>
+  <member name="car" type="{unknown}" visibility="private" line="16">
+    <docblock>
+      <var type="mixed"/>
+    </docblock>
+  </member>
+  <member name="cdr" type="{unknown}" visibility="private" line="19">
+    <docblock>
+      <var type="mixed"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="25" end="29" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$car"/>
+      <param type="mixed" variable="$cdr"/>
+    </docblock>
+    <parameter name="car" byreference="false" type="{unknown}"/>
+    <parameter name="cdr" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="__get" start="31" end="31" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="offset" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="count" start="34" end="41" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="n" byreference="false" type="integer" default="0"/>
+  </method>
+  <method name="offsetExists" start="47" end="53" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="int" variable="$offset"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="offset" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="offsetGet" start="61" end="67" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Lisp nth"/>
+      <param type="int" variable="$offset"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="offset" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="offsetSet" start="74" end="77" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$_offset"/>
+      <param type="mixed" variable="$_value"/>
+      <throws type="object">
+        <type full="\OutOfRangeException" namespace="" name="OutOfRangeException"/>
+      </throws>
+    </docblock>
+    <parameter name="_offset" byreference="false" type="{unknown}"/>
+    <parameter name="_value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="offsetUnset" start="79" end="79" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="_offset" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="pget" start="89" end="95" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get by property"/>
+      <param type="mixed" variable="$key"/>
+      <param type="mixed" variable="$default_val"/>
+      <return type="mixed"/>
+      <note value="It is similar to `plist-get' of Lisp"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="default_val" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="assoc" start="103" end="109" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$key"/>
+      <param type="mixed" variable="$default_val"/>
+      <return type="mixed"/>
+      <note value="It is similar to `assoc' of Lisp"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="default_val" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <method name="rassoc" start="117" end="123" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$key"/>
+      <param type="mixed" variable="$default_val"/>
+      <return type="mixed"/>
+      <note value="It is similar to `rassoc' of Lisp"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="default_val" byreference="false" type="{unknown}" default="null"/>
+  </method>
+  <interface full="ArrayAccess" namespace="" name="ArrayAccess">
+    <method name="offsetExists" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="Whether a offset exists">Whether or not an offset exists.</description>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="offset" optional="false" byreference="false" type="object" class="mixed"/>
+  </method>
+    <method name="offsetGet" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="Offset to retrieve">Returns the value at specified offset.</description>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="offset" optional="false" byreference="false" type="object" class="mixed"/>
+  </method>
+    <method name="offsetSet" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="Offset to set"/>
+      <return type="void"/>
+    </docblock>
+    <parameter name="offset" optional="false" byreference="false" type="object" class="mixed"/>
+    <parameter name="value" optional="false" byreference="false" type="object" class="mixed"/>
+  </method>
+    <method name="offsetUnset" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="Offset to unset">Unsets an offset.</description>
+      <return type="void"/>
+    </docblock>
+    <parameter name="offset" optional="false" byreference="false" type="object" class="mixed"/>
+  </method>
+  </interface>
+  <interface full="Countable" namespace="" name="Countable">
+    <method name="count" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="Count elements of an object"/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  </interface>
+</class>

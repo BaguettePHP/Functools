@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<index xmlns="http://xml.phpdox.net/src" basedir="/Users/megurine/repo/php/php-functools/src">
+  <namespace name="Teto\Functools">
+    <class name="CurriedCallable" src="Functools/CurriedCallable.php" description="array_map compatible partial application wrapper" xml="classes/Teto_Functools_CurriedCallable.xml"/>
+    <class name="Operator" src="Functools/Operator.php" description="Object an abstraction of the operator expression" xml="classes/Teto_Functools_Operator.xml"/>
+    <class name="PartialCallable" src="Functools/PartialCallable.php" description="array_map compatible partial application wrapper" xml="classes/Teto_Functools_PartialCallable.xml"/>
+  </namespace>
+  <namespace name="Teto\Functools\DataStructure">
+    <class name="Cons" src="Functools/DataStructure/Cons.php" description="Cons cell" xml="classes/Teto_Functools_DataStructure_Cons.xml"/>
+  </namespace>
+  <namespace name="Teto">
+    <class name="Functools" src="Functools.php" description="Functional toolbox" xml="classes/Teto_Functools.xml"/>
+  </namespace>
+  <namespace name="">
+    <interface name="ArrayAccess" xml="interfaces/ArrayAccess.xml"/>
+    <interface name="Countable" xml="interfaces/Countable.xml"/>
+  </namespace>
+</index>
