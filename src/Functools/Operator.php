@@ -32,6 +32,7 @@ final class Operator
     /**
      * @param  string   $symbol
      * @return callable
+     * @throws \BadMethodCallException
      */
     public static function op($symbol)
     {
@@ -40,7 +41,8 @@ final class Operator
         $sym = preg_replace('/ *@ */', '@', $symbol);
 
         if (!isset(self::$operators[$sym])) {
-            throw new \LogicException($symbol);
+            $message = var_export($symbol, true) . " is not exists.";
+            throw new \BadMethodCallException($message);
         }
 
         return [self::getInstance(), self::$operators[$sym]];
@@ -369,11 +371,11 @@ final class Operator
     // ===== Array Helper =====
 
     /**
-     * @param  mixed  $receiver
      * @param  string $method
+     * @param  mixed  $receiver
      * @return array
      */
-    public static function method($receiver, $method)
+    public static function method($method, $receiver)
     {
         return [$receiver, $method];
     }
@@ -536,7 +538,8 @@ final class Operator
     public static function index_assign($idx, $a, $v)
     {
         $a[$idx] = $v;
-        return $v;
+
+        return $a;
     }
 
     /**
@@ -583,7 +586,7 @@ final class Operator
     {
         $a->$idx = $v;
 
-        return $v;
+        return $a;
     }
 
     /**
