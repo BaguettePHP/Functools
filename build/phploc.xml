@@ -3,6 +3,8 @@
         <exec executable="phploc">
             <arg value="--log-csv" />
             <arg value="${basedir}/build/logs/phploc.csv" />
+            <arg value="--log-xml" />
+            <arg value="${basedir}/build/logs/phploc.xml" />
             <arg value="--exclude" />
             <arg value="${basedir}/build" />
             <arg value="--exclude" />

@@ -14,7 +14,7 @@
         </collector>
 
         <generator output="${basedir}/build/phpdox">
-            <enrich base="${basedir}/build">
+            <enrich base="${basedir}/build/logs">
                 <source type="build" />
                 <source type="phploc" />
                 <source type="git" />
