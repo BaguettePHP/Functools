@@ -100,13 +100,9 @@ final class Functools
         $fs = func_get_args();
         /** @var callable $f */
         $f  = array_shift($fs);
-
-        if (empty($f) || empty($fs)) {
-            throw new \LogicException();
-        }
-
         /** @var callable $g */
-        $g = (count($fs) === 1) ? array_shift($fs) : call_user_func_array('self::compose', $fs);
+        $g = (count($fs) === 1)
+           ? array_shift($fs) : call_user_func_array('self::compose', $fs);
 
         return function ($a) use ($f, $g) {
             return $g($f($a));

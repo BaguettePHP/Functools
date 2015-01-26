@@ -32,6 +32,38 @@ final class OperatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @expectedException \BadMethodCallException
+     * @expectedExceptionMessageRegExp /\A'.+' is not exists.\z/
+     */
+    public function test_op_throws_error()
+    {
+        _::op("a\ta");
+    }
+
+    public function test_conditional()
+    {
+        $t = function($v) { return true;   };
+        $f = function($v) { return false;  };
+        $hoge = function($v) { return "Hoge"; };
+        $fuga = function($v) { return "Fuga"; };
+
+        $this->assertEquals("Hoge", _::conditional(true,  "Hoge", "Fuga"));
+        $this->assertEquals("Fuga", _::conditional(false, "Hoge", "Fuga"));
+        $this->assertEquals("Hoge", _::conditional_lazy($t, $hoge, $fuga, 1));
+        $this->assertEquals("Fuga", _::conditional_lazy($f, $hoge, $fuga, 1));
+    }
+
+    public function test_method()
+    {
+        $now = time();
+
+        $this->assertEquals(
+            \DateTime::createFromFormat("Y-m-d", $now),
+            call_user_func(_::method('createFromFormat', 'DateTime'), 'Y-m-d', $now)
+        );
+    }
+    
+    /**
      * @dataProvider dataProviderFor_range
      */
     public function test_range(
@@ -156,5 +188,90 @@ final class OperatorTest extends \PHPUnit_Framework_TestCase
             [[1], [2]],
             _::construct_array(_::construct_array(1), _::construct_array(2))
         );
+
+        $this->assertEquals([3, 9], _::make_array_double(3, 9));
+        $this->assertEquals([7, 5, 3], _::make_array_triple(7, 5, 3));
+    }
+
+    public function test_sort_functions()
+    {
+        $class = '\Teto\Functools\Operator';
+        $sort_functions = [
+            'sort', 'rsort', 'asort', 'arsort', 'ksort', 'krsort',
+            'natsort', 'natcasesort',
+        ];
+
+        foreach ($sort_functions as $sort) {
+            $source = [1 => 'hoge', "fuga", "piyo" => false];
+            $copy   = $source;
+            $actual = $sort($source);
+
+            $this->assertEquals(
+                $source,
+                call_user_func([$class, $sort], $copy)
+            );
+        }
+
+        $usort_functions = ['usort', 'uasort', 'uksort'];
+        $compare_callback = function ($a, $b) { return 1; };
+
+        foreach ($usort_functions as $usort) {
+            $source = [1 => 'hoge', "fuga", "piyo" => false];
+            $copy   = $source;
+            $actual = $usort($source, $compare_callback);
+
+            $this->assertEquals(
+                $source,
+                call_user_func([$class, $usort], $copy, $compare_callback)
+            );
+        }
+    }
+
+    public function test_tup_to_kv()
+    {
+        $method = ['Teto\Functools\Operator', 'tup_to_kv'];
+        $expected = ["hoge" => "fuga", "fuga" => "piyo"];
+        $actual = array_reduce([["hoge", "fuga"], ["fuga", "piyo"]], $method);
+        
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function test_property()
+    {
+        $actual = new \stdClass;
+
+        $this->assertSame($actual, _::property_assign('hoge', $actual, true));
+        $this->assertSame(true, $actual->hoge);
+        $this->assertSame(true, _::property_get('hoge', $actual));
+        $this->assertTrue(_::property_isset('hoge', $actual));
+        $this->assertSame($actual, _::property_unset('hoge', $actual, true));
+        $this->assertFalse(_::property_isset('hoge', $actual));
+    }
+
+    public function test_index()
+    {
+        $source = [];
+
+        $actual = _::index_assign('hoge', $source, true);
+        $this->assertSame([], $source);
+        $this->assertSame(['hoge' => true], $actual);
+        $this->assertSame(true, _::index_get('hoge', $actual));
+        $this->assertTrue(_::index_isset('hoge', $actual));
+
+        $actual_unset = _::index_unset('hoge', $actual, true);
+        $this->assertSame(['hoge' => true], $actual);
+        $this->assertSame([], $actual_unset);
+        $this->assertFalse(_::index_isset('hoge', $actual_unset));
+    }
+
+    public function test_functools_wrapper()
+    {
+        $f = function () {};
+        $this->assertEquals(f::arity('explode'), _::arity('explode'));
+        $this->assertEquals(f::tuple('hoge'),    _::tuple('hoge'));
+        $this->assertEquals(f::cons("a", "b"),   _::cons("a", "b"));
+        $this->assertEquals(f::curry($f),        _::curry($f));
+        $this->assertEquals(f::fix($f),          _::fix($f, $f));
+        $this->assertEquals(f::compose($f, $f),  _::compose($f, $f));
     }
 }
