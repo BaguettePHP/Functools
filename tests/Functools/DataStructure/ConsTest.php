@@ -22,6 +22,19 @@ final class ConsTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(1, count($triple->cdr->cdr));
     }
 
+    /**
+     * @expectedException \OutOfRangeException
+     */
+    public function test_set_unset()
+    {
+        $tuple = new Cons("foo", null);
+
+        unset($tuple["foo"]);
+        $this->assertEquals("foo", $tuple[0]);
+
+        $tuple[0] = "hoge";
+    }
+
     public function test_pget()
     {
         $plist = new Cons(":name", new Cons("Teto Kasane", new Cons(":age", new Cons(31, null))));
