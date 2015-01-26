@@ -6,7 +6,7 @@ bin = File.join(dir, '/vendor/bin')
 composer = "#{bin}/composer.phar"
 phpunit  = "#{bin}/phpunit"
 
-report = "#{dir}/report"
+report = "#{dir}/build/report"
 report_coverage = "#{report}/coverage"
 
 log_coverage = "build/logs/clover.xml"
@@ -46,6 +46,10 @@ namespace :test do
     FileUtils.mkdir_p(report_coverage) unless FileTest.directory?(report_coverage)
     sh "#{phpunit} --coverage-clover=#{log_coverage} --coverage-html=#{report_coverage}"
   end
+end
+
+task :phploc do
+  sh "#{bin}/phploc ./src/ --log-xml ./build/logs/phploc.xml"
 end
 
 desc 'Run composer'
