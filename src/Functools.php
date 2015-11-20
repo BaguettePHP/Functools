@@ -163,4 +163,35 @@ final class Functools
             }
         );
     }
+
+    /**
+     * Function Memoizer
+     *
+     * @param  callable $f memoize function
+     * @return callable
+     */
+    public static function memoize(callable $f, array $cache)
+    {
+        $shell = function () use ($f, &$cache, &$shell) {
+            $args = func_get_args();
+
+            if (empty($args)) {
+                return call_user_func_array($f, array_merge([$shell], $args));
+            }
+
+            if (count($args) === 1 && is_scalar($args[0])) {
+                $idx = $args[0];
+            } else {
+                $idx = serialize($args);
+            }
+
+            if (!isset($cache[$idx])) {
+                $cache[$idx] = call_user_func_array($f, array_merge([$shell], $args));
+            }
+
+            return $cache[$idx];
+        };
+
+        return $shell;
+    }
 }
