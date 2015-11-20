@@ -170,7 +170,7 @@ final class Functools
      * @param  callable $f memoize function
      * @return callable
      */
-    public static function memoize(callable $f, array $cache)
+    public static function memoize(callable $f, array $cache = [])
     {
         $shell = function () use ($f, &$cache, &$shell) {
             $args = func_get_args();

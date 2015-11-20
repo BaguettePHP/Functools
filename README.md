@@ -44,6 +44,9 @@ Features
   * Make n-[Tuple](http://en.wikipedia.org/wiki/Tuple).
 * `Functools::fix(callable $callback)`
   * [Anonymous recursion](http://en.wikipedia.org/wiki/Anonymous_recursion) ([fixed-point combinator](http://en.wikipedia.org/wiki/Fixed-point_combinator))
+* `Functools::memoize(callable $callback, [array $cache])`
+  * Function optimizer using [Memoization](https://en.wikipedia.org/wiki/Memoization).
+  * This feature will help in optimization of transparent reference explicit definition equation.
 
 Iteration
 ---------
@@ -138,6 +141,20 @@ $fib = f::fix(function ($fib) {
 });
 
 $fib(6); // 13
+```
+
+### f::memoize()
+
+```php
+// simple fibonacci function. But, very very slow.
+$fib1 = function ($n) use (&$fib1) {
+    return ($n < 2) ? $n : $fib1($n - 1) + $fib1($n - 2);
+};
+
+// simple fibonacci function too. very fast!
+$fib2 = f::memoize(function ($fib, $n) {
+    return ($n < 2) ? $n : $fib($n - 1) + $fib($n - 2);
+}, [0, 1]);
 ```
 
 Copyright
