@@ -30,6 +30,36 @@ final class MemoizerTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals($expected, $actual2);
 
+        //var_dump(['fib1' => $end1 - $begin1, 'fib2' => $end2 - $begin2]);
+        $this->assertLessThan($end1 - $begin1, $end2 - $begin2);
+    }
+
+    public function test_tak()
+    {
+        $tak1 = function($x, $y, $z) use (&$tak1) {
+            return ($x <= $y) ? $y :
+                $tak1 ($tak1 ($x - 1, $y, $z),
+                      $tak1 ($y - 1, $z, $x),
+                      $tak1 ($z - 1, $x, $y));
+        };
+
+        $begin1  = microtime(true);
+        $actual1 = $tak1(11, 7, 0);
+        $end1    = microtime(true);
+
+
+        $tak2 = f::memoize(function($tak, $x, $y, $z) {
+            return ($x <= $y) ? $y :
+                $tak ($tak ($x - 1, $y, $z),
+                      $tak ($y - 1, $z, $x),
+                      $tak ($z - 1, $x, $y));
+        });
+
+        $begin2  = microtime(true);
+        $actual2 = $tak2(11, 7, 0);
+        $end2    = microtime(true);
+
+        //var_dump(['tak1' => $end1 - $begin1, 'tak2' => $end2 - $begin2]);
         $this->assertLessThan($end1 - $begin1, $end2 - $begin2);
     }
 }
