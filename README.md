@@ -152,8 +152,8 @@ $fib1 = function ($n) use (&$fib1) {
 };
 
 // simple fibonacci function too. very fast!
-$fib2 = f::memoize(function ($fib, $n) {
-    return ($n < 2) ? $n : $fib($n - 1) + $fib($n - 2);
+$fib2 = f::memoize(function ($n) use (&$fib2) {
+    return ($n < 2) ? $n : $fib2($n - 1) + $fib2($n - 2);
 }, [0, 1]);
 ```
 
