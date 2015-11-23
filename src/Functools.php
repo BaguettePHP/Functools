@@ -172,11 +172,11 @@ final class Functools
      */
     public static function memoize(callable $f, array $cache = [])
     {
-        $shell = function () use ($f, &$cache, &$shell) {
+        return function () use ($f, &$cache) {
             $args = func_get_args();
 
             if (empty($args)) {
-                return call_user_func_array($f, array_merge([$shell], $args));
+                return call_user_func_array($f, $args);
             }
 
             if (count($args) === 1 && is_scalar($args[0])) {
@@ -186,12 +186,10 @@ final class Functools
             }
 
             if (!isset($cache[$idx])) {
-                $cache[$idx] = call_user_func_array($f, array_merge([$shell], $args));
+                $cache[$idx] = call_user_func_array($f, $args);
             }
 
             return $cache[$idx];
         };
-
-        return $shell;
     }
 }

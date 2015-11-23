@@ -20,8 +20,8 @@ final class MemoizerTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals($expected, $actual1);
 
-        $fib2 = f::memoize(function ($fib, $n) {
-            return ($n < 2) ? $n : $fib($n - 1) + $fib($n - 2);
+        $fib2 = f::memoize(function ($n) use (&$fib2) {
+            return ($n < 2) ? $n : $fib2($n - 1) + $fib2($n - 2);
         }, [0, 1]);
 
         $begin2  = microtime(true);
@@ -48,11 +48,11 @@ final class MemoizerTest extends \PHPUnit_Framework_TestCase
         $end1    = microtime(true);
 
 
-        $tak2 = f::memoize(function($tak, $x, $y, $z) {
+        $tak2 = f::memoize(function($x, $y, $z) use (&$tak2) {
             return ($x <= $y) ? $y :
-                $tak ($tak ($x - 1, $y, $z),
-                      $tak ($y - 1, $z, $x),
-                      $tak ($z - 1, $x, $y));
+                $tak2 ($tak2 ($x - 1, $y, $z),
+                       $tak2 ($y - 1, $z, $x),
+                       $tak2 ($z - 1, $x, $y));
         });
 
         $begin2  = microtime(true);
