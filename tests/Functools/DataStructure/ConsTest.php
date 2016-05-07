@@ -35,6 +35,40 @@ final class ConsTest extends \PHPUnit_Framework_TestCase
         $tuple[0] = "hoge";
     }
 
+    public function test_offset()
+    {
+        $list = new Cons("apple", new Cons("banana", new Cons("orange", null)));
+
+        $this->assertEquals("apple",  $list[0]);
+        $this->assertEquals("banana", $list[1]);
+        $this->assertEquals("orange", $list[2]);
+        $this->assertNull($list[3]);
+    }
+
+    /**
+     * @expectedException \OutOfRangeException
+     * @dataProvider dataProviderFor_test_offset_raiseException
+     */
+    public function test_offset_raiseException($offset)
+    {
+        $list = new Cons("apple", new Cons("banana", new Cons("orange", null)));
+        $this->assertFalse(isset($list[$offset]));
+
+        $_ = $list[$offset];
+    }
+
+    public function dataProviderFor_test_offset_raiseException()
+    {
+        return [
+            ['offset' =>    -1],
+            ['offset' =>   2.0],
+            ['offset' =>  -100],
+            ['offset' => "3.0"],
+            ['offset' =>     9],
+        ];
+    }
+
+
     public function test_pget()
     {
         $plist = new Cons(":name", new Cons("Teto Kasane", new Cons(":age", new Cons(31, null))));

@@ -33,8 +33,8 @@ final class Cons implements \ArrayAccess, \Countable
     /** @return boolean */
     public function count($n = 0)
     {
-        if ($this->car === null) { return $n; }
-        if ($this->cdr === null) { return $n + 1; }
+        if (is_null($this->car)) { return $n; }
+        if (is_null($this->cdr)) { return $n + 1; }
         if (!$this->cdr instanceof self) { return $n + 2; }
 
         return $this->cdr->count($n + 1);
@@ -46,10 +46,15 @@ final class Cons implements \ArrayAccess, \Countable
      */
     public function offsetExists($offset)
     {
-        if ($offset == 0) { return isset($this->car); }
-        if ($offset == 1) { return isset($this->cdr[0]); }
+        if ($offset === 0) { return isset($this->car); }
+        if ($offset === 1 && is_null($this->cdr)) {
+            return false;
+        }
+        if (is_int($offset) && $offset >= 1 && $this->cdr instanceof self) {
+            return isset($this->cdr[$offset - 1]);
+        }
 
-        return isset($this->cdr[$offset - 1]);
+        return false;
     }
 
     /**
@@ -61,9 +66,14 @@ final class Cons implements \ArrayAccess, \Countable
     public function offsetGet($offset)
     {
         if ($offset === 0) { return $this->car; }
-        if ($offset === 1) { return $this->cdr[0]; }
+        if ($offset === 1 && is_null($this->cdr)) {
+            return null;
+        }
+        if (is_int($offset) && $offset >= 1 && $this->cdr instanceof self) {
+            return $this->cdr[$offset - 1];
+        }
 
-        return $this->cdr[$offset - 1];
+        throw new \OutOfRangeException;
     }
 
     /**
