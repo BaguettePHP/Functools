@@ -23,6 +23,7 @@
         ,"satooshi/php-coveralls": "dev-master"
         ,"emonkak/underbar.php": "dev-master"
         ,"ginq/ginq": "dev-master"
+        ,"psy/psysh": "^0.7.2"
     },
     "autoload": {
         "psr-4": {
