@@ -38,8 +38,10 @@ Features
   * [Currying](http://en.wikipedia.org/wiki/Currying) `$callback` object.
 * `Functools::op(string $symbol, [array $arguments, int $pos])`
   * Get callable object (and partial application.)
-* `Functools::collback(callable $callback,...)`
+* `Functools::compose(callable $callback,...)`
   * [Function composition](http://en.wikipedia.org/wiki/Function_composition_%28computer_science%29).
+* `Functools::pipe(mixed $value, callable $callback...)`
+  * [Pipeline](https://en.wikipedia.org/wiki/Pipeline_(Unix)) like functions composing
 * `Functools::tuple(mixed $item,...)`
   * Make n-[Tuple](http://en.wikipedia.org/wiki/Tuple).
 * `Functools::fix(callable $callback)`

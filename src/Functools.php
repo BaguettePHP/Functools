@@ -110,6 +110,23 @@ final class Functools
     }
 
     /**
+     * Unix PIPELINE like functions composing
+     *
+     * @param  mixed    $value
+     * @param  callable $f
+     * @param  callable $g,...
+     * @return callable
+     */
+    public static function pipe($value, callable $f, callable $g = null)
+    {
+        $fs = func_get_args();
+        /** @var mixed $value */
+        $value = array_shift($fs);
+
+        return call_user_func(call_user_func_array('self::compose', $fs), $value);
+    }
+
+    /**
      * Make new cons cell
      *
      * @param  mixed $car
