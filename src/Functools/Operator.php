@@ -239,7 +239,7 @@ final class Operator
     /**
      * @param  mixed $a
      * @param  mixed $b
-     * @return int|float
+     * @return int
      */
     public static function modulus($a, $b) { return $a % $b; }
 
@@ -613,77 +613,141 @@ final class Operator
 
     // ===== Sort functions wrapper =====
 
-    public static function sort($array, $sort_flags = SORT_REGULAR)
+    /**
+     * @param  array $array
+     * @param  int   $sort_flags
+     * @return array
+     * @link   http://php.net/manual/function.sort.php
+     */
+    public static function sort(array $array, $sort_flags = SORT_REGULAR)
     {
         sort($array, $sort_flags);
 
         return $array;
     }
 
-    public static function rsort($array, $sort_flags = SORT_REGULAR)
+    /**
+     * @param  array $array
+     * @param  int   $sort_flags
+     * @return array
+     * @link   http://php.net/manual/function.rsort.php
+     */
+    public static function rsort(array $array, $sort_flags = SORT_REGULAR)
     {
         rsort($array, $sort_flags);
 
         return $array;
     }
 
-    public static function asort($array, $sort_flags = SORT_REGULAR)
+    /**
+     * @param  array $array
+     * @param  int   $sort_flags
+     * @return array
+     * @link   http://php.net/manual/function.asort.php
+     */
+    public static function asort(array $array, $sort_flags = SORT_REGULAR)
     {
         asort($array, $sort_flags);
 
         return $array;
     }
 
-    public static function arsort($array, $sort_flags = SORT_REGULAR)
+    /**
+     * @param  array $array
+     * @param  int   $sort_flags
+     * @return array
+     * @link   http://php.net/manual/function.arsort.php
+     */
+    public static function arsort(array $array, $sort_flags = SORT_REGULAR)
     {
         arsort($array, $sort_flags);
 
         return $array;
     }
 
-    public static function ksort($array, $sort_flags = SORT_REGULAR)
+    /**
+     * @param  array $array
+     * @param  int   $sort_flags
+     * @return array
+     * @link   http://php.net/manual/function.ksort.php
+     */
+    public static function ksort(array $array, $sort_flags = SORT_REGULAR)
     {
         ksort($array, $sort_flags);
 
         return $array;
     }
 
-    public static function krsort($array, $sort_flags = SORT_REGULAR)
+    /**
+     * @param  array $array
+     * @param  int   $sort_flags
+     * @return array
+     * @link   http://php.net/manual/function.krsort.php
+     */
+    public static function krsort(array $array, $sort_flags = SORT_REGULAR)
     {
         krsort($array, $sort_flags);
 
         return $array;
     }
 
-    public static function usort($array, callable $value_compare_func)
+    /**
+     * @param  array    $array
+     * @param  callable $value_compare_func
+     * @return array
+     * @link  http://php.net/manual/function.usort.php
+     */
+    public static function usort(array $array, callable $value_compare_func)
     {
         usort($array, $value_compare_func);
 
         return $array;
     }
 
-    public static function uasort($array, callable $value_compare_func)
+    /**
+     * @param  array    $array
+     * @param  callable $value_compare_func
+     * @return array
+     * @link   http://php.net/manual/function.uasort.php
+     */
+    public static function uasort(array $array, callable $value_compare_func)
     {
         uasort($array, $value_compare_func);
 
         return $array;
     }
 
-    public static function uksort($array, callable $key_compare_func)
+    /**
+     * @param  array    $array
+     * @param  callable $key_compare_func
+     * @return array
+     * @link   http://php.net/manual/function.uksort.php
+     */
+    public static function uksort(array $array, callable $key_compare_func)
     {
         uksort($array, $key_compare_func);
 
         return $array;
     }
 
-    public static function natsort($array)
+    /**
+     * @param  array $array
+     * @return array
+     * @link   http://php.net/manual/function.natsort.php
+     */
+    public static function natsort(array $array)
     {
         natsort($array);
 
         return $array;
     }
 
-    public static function natcasesort($array)
+    /**
+     * @param  array $array
+     * @return array
+     * @link   http://php.net/manual/function.natsort.php
+     */
+    public static function natcasesort(array $array)
     {
         natcasesort($array);
 
