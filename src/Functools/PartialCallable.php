@@ -30,7 +30,7 @@ final class PartialCallable
         $this->arguments = $arguments;
         $this->pos       = $pos;
     }
-    
+
     /**
      * @param  mixed $arg,...
      * @return mixed
@@ -58,13 +58,13 @@ final class PartialCallable
 
         if ($this->pos < 0) {
             // through
-        }elseif ($this->pos !== null) {
+        } elseif ($this->pos !== null) {
             $arguments[$this->pos] = array_shift($additional_arguments);
             ksort($arguments);
         } else {
         	$arguments = array_merge($arguments, $additional_arguments);
         }
-        
+
         return $arguments;
     }
 }

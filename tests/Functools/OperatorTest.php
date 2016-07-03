@@ -232,7 +232,7 @@ final class OperatorTest extends \PHPUnit_Framework_TestCase
         $method = ['Teto\Functools\Operator', 'tup_to_kv'];
         $expected = ["hoge" => "fuga", "fuga" => "piyo"];
         $actual = array_reduce([["hoge", "fuga"], ["fuga", "piyo"]], $method);
-        
+
         $this->assertEquals($expected, $actual);
     }
 
